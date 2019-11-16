@@ -12,7 +12,7 @@ class Professor extends Authenticatable
 
     protected $table = 'professors';
     public $timestamps = true;
-    protected $fillable = array('name', 'email', 'national_id', 'faculty_id', 'department_id', 'grade_id', 'api_token');
+    protected $fillable = array('name', 'email','password', 'national_id', 'faculty_id', 'department_id', 'grade_id', 'api_token');
 
     protected $hidden = [
         'password', 'remember_token',

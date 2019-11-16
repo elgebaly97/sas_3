@@ -18,7 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
+    Route::post('register-student', 'AuthController@registerStudent');
+    Route::post('login-student', 'AuthController@loginStudent');
+
+    Route::post('register-professor', 'AuthController@registerProfessor');
+    Route::post('login-professor', 'AuthController@loginProfessor');
+
+    Route::get('get-students', 'ApiController@students');
 });
  // test something

@@ -25,7 +25,10 @@ class AuthController extends Controller
         return response()->json($response);
     }
 
-    public function register(Request $request){
+
+    // Register For Student //
+
+    public function registerStudent(Request $request){
         $validator = validator()->make($request->all(),[
             'name' => 'required',
             'email' => 'required|unique:students',
@@ -50,7 +53,9 @@ class AuthController extends Controller
 
 
 
-    public function login(Request $request){
+    // Login For Student //
+
+    public function loginStudent(Request $request){
         $validator = validator()->make($request->all(),[
 
             'email' => 'required',
@@ -75,4 +80,66 @@ class AuthController extends Controller
         }
         return $this->apiResponse(2, 'Login Failed');
     }
+
+
+
+    // Register For Professor //
+
+    public function registerProfessor(Request $request){
+        $validator = validator()->make($request->all(),[
+            'name' => 'required',
+            'email' => 'required|unique:professors',
+            'national_id' => 'required',
+            'password' => 'required|confirmed'
+        ]);
+
+        if($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $request->merge(['password' => bcrypt($request->password)]);
+
+        $professor = Professor::create($request->all());
+        $professor->api_token = Str::random(60);
+        $professor->save();
+        return $this->apiResponse(1, 'تم الاضافه بنجاح', [
+            'api_token' => $professor->api_token,
+            'professor' => $professor
+        ]);
+    }
+
+
+
+    // Login For Professor //
+
+    public function loginProfessor(Request $request){
+        $validator = validator()->make($request->all(),[
+
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $professor = Professor::where('email', $request->email)->first();
+
+        if($professor){
+            if(Hash::check($request->password, $professor->password)){
+                return $this->apiResponse(1, 'Login Successfuly', [
+                    'api_token' => $professor->api_token,
+                    'professor' => $professor
+                ]);
+            } else{
+                return $this->apiResponse(2, 'Login Failed');
+            }
+        }
+        return $this->apiResponse(2, 'Login Failed');
+    }
+
+
+
+
+
 }
