@@ -9,7 +9,7 @@ class Subject extends Model
 
     protected $table = 'subjects';
     public $timestamps = true;
-    protected $fillable = array('name', 'grade_id');
+    protected $fillable = array('name', 'grade_id', 'subject_id');
 
     public function grade()
     {
@@ -21,4 +21,14 @@ class Subject extends Model
         return $this->hasOne('App\Models\Mark');
     }
 
+
+    public function assignments()
+    {
+        return $this->hasMany('App\Models\Assignment');
+    }
+
+    public function sources()
+    {
+        return $this->hasMany('App\Models\Source');
+    }
 }

@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Assignment extends Model 
+class Source extends Model
 {
-
-    protected $table = 'assignments';
+    protected $table = 'sources';
     public $timestamps = true;
     protected $fillable = array('professor_id', 'grade_id', 'subject_id');
 
@@ -20,5 +19,4 @@ class Assignment extends Model
     {
         return $this->belongsTo('App\Models\Subject');
     }
-
 }

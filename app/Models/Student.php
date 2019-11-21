@@ -12,7 +12,7 @@ class Student extends Authenticatable
 
     protected $table = 'students';
     public $timestamps = true;
-    protected $fillable = array('name', 'email', 'password', 'national_id','api_token', 'faculty_id', 'department_id', 'grade_id', 'group_id');
+    protected $fillable = array('name', 'email', 'password', 'national_id','address','image','score','api_token', 'faculty_id', 'department_id', 'grade_id', 'group_id');
 
     protected $hidden = [
         'password', 'remember_token',
@@ -56,6 +56,11 @@ class Student extends Authenticatable
     public function tokens()
     {
         return $this->hasMany('App\Token');
+    }
+
+    public function marks()
+    {
+        return $this->hasMany('App\Models\Mark');
     }
 
 }

@@ -21,4 +21,9 @@ class Mark extends Model
         return $this->hasOne('App\Models\Notification');
     }
 
+    public function student()
+    {
+        return $this->belongsTo('App\Models\Student');
+    }
+
 }

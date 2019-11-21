@@ -139,6 +139,13 @@ class AuthController extends Controller
     }
 
 
+    public function profileStudent(Request $request){
+        $student = $request->user();
+
+        return $this->apiResponse(1, '', $student);
+    }
+
+
 
 
 

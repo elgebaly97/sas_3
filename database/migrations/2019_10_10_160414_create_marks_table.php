@@ -10,8 +10,10 @@ class CreateMarksTable extends Migration {
 		Schema::create('marks', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
+            $table->integer('student_id');
 			$table->integer('subject_id');
 			$table->integer('attendance');
+            $table->integer('work');
 			$table->integer('midterm');
 			$table->integer('semester');
 		});

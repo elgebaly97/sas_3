@@ -25,5 +25,24 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::post('login-professor', 'AuthController@loginProfessor');
 
     Route::get('get-students', 'ApiController@students');
+
+    Route::get('subjects', 'ApiController@subjects');
+    Route::get('assignments', 'ApiController@assignments');
+    Route::get('sources', 'ApiController@sources');
+    Route::get('marks', 'ApiController@marks');
+
+
+
+
+
+
+    Route::group(['middleware' => 'auth:student-api'],function()
+    {
+        Route::post('profile', 'AuthController@profileStudent');
+
+
+
+    });
+
 });
  // test something
