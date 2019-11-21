@@ -12,11 +12,11 @@ class CreateProfessorsTable extends Migration {
 			$table->timestamps();
 			$table->string('name');
 			$table->string('email')->unique();
-			$table->string('password');
-			$table->bigInteger('national_id');
-			$table->integer('faculty_id');
-			$table->integer('department_id');
-			$table->integer('grade_id');
+			$table->string('password')->nullable();
+			$table->string('national_id')->nullable();
+			$table->integer('faculty_id')->nullable();
+			$table->integer('department_id')->nullable();
+			$table->integer('grade_id')->nullable();
             $table->string('api_token', 60)->unique()->nullable();
             $table->rememberToken();
 		});

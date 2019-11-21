@@ -21,4 +21,9 @@ class Assignment extends Model
         return $this->belongsTo('App\Models\Subject');
     }
 
+    public function grade()
+    {
+        return $this->belongsTo('App\Models\Grade');
+    }
+
 }

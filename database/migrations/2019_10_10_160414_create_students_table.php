@@ -16,7 +16,7 @@ class CreateStudentsTable extends Migration {
 			$table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->integer('score')->nullable();
-			$table->bigInteger('national_id')->nullable();
+			$table->string('national_id')->nullable();
 			$table->integer('faculty_id')->nullable();
 			$table->integer('department_id')->nullable();
 			$table->integer('grade_id')->nullable();

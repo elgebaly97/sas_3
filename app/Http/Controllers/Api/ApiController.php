@@ -45,6 +45,9 @@ class ApiController extends Controller
             if($request->has('subject_id')){
                 $query->where('subject_id', $request->subject_id);
             }
+            else if($request->has('grade_id')){
+                $query->where('grade_id', $request->grade_id);
+            }
         })->get();
 
         return $this->apiResponse(1, '', $assignments);
