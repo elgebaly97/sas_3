@@ -28,9 +28,9 @@ class Student extends Authenticatable
         return $this->belongsTo('App\Models\Grade');
     }
 
-    public function result()
+    public function results()
     {
-        return $this->hasOne('App\Models\Result');
+        return $this->hasMany('App\Models\Result');
     }
 
     public function notifications()

@@ -43,4 +43,14 @@ class Professor extends Authenticatable
         return $this->hasMany('App\Token');
     }
 
+    public function assignments()
+    {
+        return $this->hasMany('App\Models\Assignment');
+    }
+
+    public function sources()
+    {
+        return $this->hasMany('App\Models\Source');
+    }
+
 }

@@ -26,4 +26,9 @@ class Department extends Model
         return $this->hasMany('App\Models\Professor');
     }
 
+    public function events()
+    {
+        return $this->hasMany('App\Models\Event');
+    }
+
 }

@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Assignment;
+use App\Models\Department;
+use App\Models\Event;
+use App\Models\Grade;
 use App\Models\Mark;
+use App\Models\Result;
 use App\Models\Source;
 use App\Models\Student;
 use App\Models\Subject;
+use App\Models\Table;
 use function foo\func;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -48,7 +53,7 @@ class ApiController extends Controller
             else if($request->has('grade_id')){
                 $query->where('grade_id', $request->grade_id);
             }
-        })->get();
+        })->get()->load('professor','subject');
 
         return $this->apiResponse(1, '', $assignments);
     }
@@ -58,7 +63,7 @@ class ApiController extends Controller
             if($request->has('subject_id')){
                 $query->where('subject_id', $request->subject_id);
             }
-        })->get();
+        })->get()->load('professor','subject');
 
         return $this->apiResponse(1, '', $sources);
     }
@@ -71,5 +76,41 @@ class ApiController extends Controller
         })->get();
 
         return $this->apiResponse(1, '', $mark);
+    }
+
+
+    public function events(Request $request){
+        $event = Event::where(function($query) use($request){
+            if($request->has('department_id')){
+                $query->where('department_id', $request->department_id);
+            }
+        })->get();
+        return $this->apiResponse(1, '', $event);
+    }
+
+    public function tables(Request $request){
+        $table = Table::where(function($query) use($request){
+            if($request->has('grade_id')){
+                $query->where('grade_id', $request->grade_id);
+            }
+        })->get();
+        return $this->apiResponse(1, '', $table);
+    }
+
+    public function result(Request $request){
+        $result = Department::where('id', $request->id)->with(['grades.subjects.results' => function($query) use($request){
+            if($request->has('student_id')){
+                $query->where('student_id', $request->student_id);
+            }
+        }])->get();
+        return $this->apiResponse(1, '', $result);
+    }
+
+
+    public function grade(Request $request){
+        $grade = Grade::with(['subjects.results' => function($query) use($request){
+            $query->where('student_id', $request->student_id);
+        }])->get();
+        return $this->apiResponse(1, '', $grade);
     }
 }

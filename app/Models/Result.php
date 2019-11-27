@@ -9,7 +9,7 @@ class Result extends Model
 
     protected $table = 'results';
     public $timestamps = true;
-    protected $fillable = array('image', 'student_id');
+    protected $fillable = array('image', 'student_id', 'subject_id');
 
     public function student()
     {
@@ -19,6 +19,11 @@ class Result extends Model
     public function notification()
     {
         return $this->hasOne('App\Models\Notification');
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo('App\Models\Subject');
     }
 
 }

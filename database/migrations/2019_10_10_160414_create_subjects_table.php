@@ -12,6 +12,7 @@ class CreateSubjectsTable extends Migration {
 			$table->timestamps();
 			$table->string('name');
 			$table->integer('grade_id');
+            $table->integer('term_id');
 		});
 	}
 

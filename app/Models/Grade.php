@@ -36,9 +36,14 @@ class Grade extends Model
         return $this->hasMany('App\Models\Group');
     }
 
+
     public function assignments()
     {
         return $this->hasMany('App\Models\Assignment');
     }
 
+    public function terms()
+    {
+        return $this->belongsToMany('App\Models\Term');
+    }
 }

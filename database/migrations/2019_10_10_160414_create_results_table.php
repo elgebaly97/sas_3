@@ -10,8 +10,10 @@ class CreateResultsTable extends Migration {
 		Schema::create('results', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('image');
+			$table->integer('result');
+			$table->string('grade');
 			$table->integer('student_id');
+			$table->integer('subject_id');
 		});
 	}
 
