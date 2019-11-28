@@ -73,7 +73,7 @@ class ApiController extends Controller
             if(($request->has('subject_id')) and ($request->has('student_id'))){
                 $query->where('subject_id', $request->subject_id)->where('student_id', $request->student_id);
             }
-        })->get();
+        })->get()->load('subject');
 
         return $this->apiResponse(1, '', $mark);
     }
