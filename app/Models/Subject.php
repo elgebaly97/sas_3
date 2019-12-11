@@ -9,7 +9,7 @@ class Subject extends Model
 
     protected $table = 'subjects';
     public $timestamps = true;
-    protected $fillable = array('name', 'grade_id', 'subject_id','term_id');
+    protected $fillable = array('name', 'grade_id', 'subject_id','term_id','department_id');
 
     public function grade()
     {
@@ -45,5 +45,10 @@ class Subject extends Model
     public function professor()
     {
         return $this->belongsTo('App\Models\Professor');
+    }
+
+    public function department()
+    {
+        return $this->belongsTo('App\Models\Department');
     }
 }

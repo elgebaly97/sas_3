@@ -14,6 +14,8 @@ class CreateSubjectsTable extends Migration {
 			$table->integer('grade_id');
             $table->integer('term_id');
             $table->integer('professor_id');
+            $table->integer('department_id');
+
 		});
 	}
 

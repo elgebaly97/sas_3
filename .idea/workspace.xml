@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ec7c2e6-bba4-4d18-8196-8e95331e1270" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Assignment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Assignment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Mark.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mark.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Source.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Source.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_26_075853_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_26_075853_create_events_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +20,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1364">
+            <state relative-caret-position="-1034">
               <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Subject.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Department.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -71,7 +88,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_11_26_072753_create_terms_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Grade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_26_074140_create_grades_terms_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Department.php" />
         <option value="$PROJECT_DIR$/app/Models/Event.php" />
         <option value="$PROJECT_DIR$/app/Models/GradeTerm.php" />
         <option value="$PROJECT_DIR$/app/Models/Term.php" />
@@ -82,8 +98,6 @@
         <option value="$PROJECT_DIR$/app/Models/Projects.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_04_095342_create_projects_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_grades_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Subject.php" />
         <option value="$PROJECT_DIR$/app/Models/Source.php" />
         <option value="$PROJECT_DIR$/app/Models/Assignment.php" />
         <option value="$PROJECT_DIR$/app/Models/Mark.php" />
@@ -95,6 +109,9 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Subject.php" />
+        <option value="$PROJECT_DIR$/app/Models/Department.php" />
       </list>
     </option>
   </component>
@@ -298,18 +315,18 @@
       <workItem from="1575451390236" duration="4432000" />
       <workItem from="1575532189045" duration="3167000" />
       <workItem from="1575959775427" duration="7434000" />
-      <workItem from="1576061488443" duration="290000" />
+      <workItem from="1576061488443" duration="1134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84824000" />
+    <option name="totallyTimeSpent" value="85668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1548" height="840" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18053691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3228188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -357,13 +374,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/professor/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/student/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -537,13 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Department.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_students_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -583,13 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -643,13 +639,6 @@
           <folding>
             <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Subject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -708,9 +697,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_11_121722_add_department_id_to_subjects_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_10_160414_create_subjects_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Department.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Subject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1364">
+        <state relative-caret-position="-1034">
           <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
         </state>
       </provider>

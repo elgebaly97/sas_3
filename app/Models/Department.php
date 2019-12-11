@@ -31,4 +31,9 @@ class Department extends Model
         return $this->hasMany('App\Models\Event');
     }
 
+    public function subjects()
+    {
+        return $this->hasMany('App\Models\Subject');
+    }
+
 }
