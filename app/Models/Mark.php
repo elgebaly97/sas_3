@@ -9,7 +9,7 @@ class Mark extends Model
 
     protected $table = 'marks';
     public $timestamps = true;
-    protected $fillable = array('subject_id', 'attendance', 'midterm', 'semester');
+    protected $fillable = array('subject_id', 'attendance','work', 'midterm', 'semester','student_id');
 
     public function subject()
     {

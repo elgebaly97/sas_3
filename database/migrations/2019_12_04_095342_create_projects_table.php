@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('projects', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('title');
+            $table->string('category');
             $table->text('body');
-            $table->integer('department_id');
-            $table->dateTime('day');
-            $table->string('image');
+            $table->year('year');
+            $table->integer('professor_id');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('projects');
     }
 }

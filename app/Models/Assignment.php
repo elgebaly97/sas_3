@@ -9,7 +9,7 @@ class Assignment extends Model
 
     protected $table = 'assignments';
     public $timestamps = true;
-    protected $fillable = array('professor_id', 'grade_id', 'subject_id');
+    protected $fillable = array('professor_id', 'grade_id', 'subject_id','title', 'path');
 
     public function notification()
     {

@@ -8,7 +8,7 @@ class Source extends Model
 {
     protected $table = 'sources';
     public $timestamps = true;
-    protected $fillable = array('professor_id', 'grade_id', 'subject_id');
+    protected $fillable = array('professor_id', 'grade_id', 'subject_id','title', 'path');
 
     public function notification()
     {

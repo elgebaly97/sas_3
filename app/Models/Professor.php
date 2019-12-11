@@ -53,4 +53,19 @@ class Professor extends Authenticatable
         return $this->hasMany('App\Models\Source');
     }
 
+    public function offices()
+    {
+        return $this->hasMany('App\Models\Office');
+    }
+
+    public function projects()
+    {
+        return $this->hasMany('App\Models\Projects');
+    }
+
+    public function subjects()
+    {
+        return $this->hasMany('App\Models\Subject');
+    }
+
 }

@@ -28,6 +28,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
 
     Route::post('register-professor', 'AuthController@registerProfessor');
     Route::post('login-professor', 'AuthController@loginProfessor');
+    //Route::post('profile-professor', 'AuthController@profileProfessor');
 
     Route::get('get-students', 'ApiController@students');
 
@@ -40,6 +41,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::get('result', 'ApiController@result');
     Route::get('grade', 'ApiController@grade');
 
+    Route::get('departments', 'ApiController@departments');
+    Route::get('grades', 'ApiController@grades');
+
+
 
 
 
@@ -48,6 +53,23 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::group(['middleware' => 'auth:student-api'],function()
     {
         Route::post('profile', 'AuthController@profileStudent');
+
+
+
+    });
+
+
+    Route::group(['middleware' => 'auth:professor-api'],function()
+    {
+
+        Route::post('add-source', 'ApiController@addSource');
+        Route::post('add-assignment', 'ApiController@addAssignment');
+        Route::post('add-mark', 'ApiController@addMarks');
+
+        Route::get('student-grade', 'ApiController@studentsGrade');
+
+        Route::post('profile-professor', 'AuthController@profileProfessor');
+
 
 
 

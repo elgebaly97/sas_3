@@ -145,6 +145,12 @@ class AuthController extends Controller
         return $this->apiResponse(1, '', $student);
     }
 
+    public function profileProfessor(Request $request){
+        $professor = $request->user()->load('department','offices','projects');
+
+        return $this->apiResponse(1, '', $professor);
+    }
+
 
 
 

@@ -29,6 +29,8 @@ class ApiController extends Controller
         return response()->json($response);
     }
 
+    // ************* API For Students ******************
+
     public function students(){
         $students = Student::all();
         return $this->apiResponse(1, '', $students);
@@ -53,7 +55,7 @@ class ApiController extends Controller
             else if($request->has('grade_id')){
                 $query->where('grade_id', $request->grade_id);
             }
-        })->get()->load('professor','subject');
+        })->get()->load('professor','subject','grade.departments');
 
         return $this->apiResponse(1, '', $assignments);
     }
@@ -63,7 +65,7 @@ class ApiController extends Controller
             if($request->has('subject_id')){
                 $query->where('subject_id', $request->subject_id);
             }
-        })->get()->load('professor','subject');
+        })->get()->load('professor','subject','subject.grade.departments');
 
         return $this->apiResponse(1, '', $sources);
     }
@@ -113,4 +115,83 @@ class ApiController extends Controller
         }])->get();
         return $this->apiResponse(1, '', $grade);
     }
+
+
+
+
+    // ********************* API For Professors *********************
+
+    public function addSource(Request $request){
+        $validator = validator()->make($request->all(), [
+            'department_id' => 'required',
+            //'grade_id' => 'required',
+            'subject_id' => 'required',
+            'title' => 'required',
+            'path' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $newSource = $request->user()->sources()->create($request->all());
+        return $this->apiResponse(1, 'Done', $newSource);
+    }
+
+    // Api for Dropdown List
+
+    public function departments(){
+        $departmnets = Department::all();
+        return $this->apiResponse(1, '', $departmnets);
+    }
+
+    public function grades(){
+        $grades = Grade::all();
+        return $this->apiResponse(1, '', $grades);
+    }
+
+    public function addAssignment(Request $request){
+        $validator = validator()->make($request->all(), [
+            'department_id' => 'required',
+            'grade_id' => 'required',
+            'subject_id' => 'required',
+            'title' => 'required',
+            'path' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $newAssignment = $request->user()->assignments()->create($request->all());
+        return $this->apiResponse(1, '', $newAssignment);
+    }
+
+    public function studentsGrade(Request $request){
+        $students = Student::where(function($query) use($request){
+            if($request->has('grade_id')){
+                $query->where('grade_id', $request->grade_id);
+            }
+        })->get();
+        return $this->apiResponse(1, '', $students);
+    }
+
+    public function addMarks(Request $request){
+        $validator = validator()->make($request->all(), [
+            'student_id' => 'required',
+            'subject_id' => 'required',
+            'attendance' => 'required',
+            'work' => 'required',
+            'midterm' => 'required',
+            'semester' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $newMark = Mark::create($request->all());
+        return $this->apiResponse(1, '', $newMark);
+    }
+
 }
