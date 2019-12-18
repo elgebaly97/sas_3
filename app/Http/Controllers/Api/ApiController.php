@@ -52,10 +52,10 @@ class ApiController extends Controller
             if($request->has('subject_id')){
                 $query->where('subject_id', $request->subject_id);
             }
-            else if(($request->has('department_id')) and ($request->has('grade_id'))){
+            elseif(($request->has('department_id')) and ($request->has('grade_id'))){
                 $query->where('department_id', $request->department_id)->where('grade_id', $request->grade_id);
             }
-        })->get()->load('professor','subject','grade.departments');
+        })->get()->load('professor','subject');
 
         return $this->apiResponse(1, '', $assignments);
     }
