@@ -112,7 +112,7 @@ class ApiController extends Controller
             if($request->has('student_id')){
                 $query->where('student_id', $request->student_id);
             }
-        })->get();
+        })->get()->load('subject');
         return $this->apiResponse(1, '', $result);
     }
 
