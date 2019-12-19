@@ -99,22 +99,22 @@ class ApiController extends Controller
         return $this->apiResponse(1, '', $table);
     }
 
-    /*public function result(Request $request){
+    public function result(Request $request){
         $result = Department::where('id', $request->id)->with(['grades.subjects.results' => function($query) use($request){
             if($request->has('student_id')){
                 $query->where('student_id', $request->student_id);
             }
         }])->get();
         return $this->apiResponse(1, '', $result);
-    }*/
-    public function result(Request $request){
+    }
+    /*public function result(Request $request){
         $result = Result::where( function($query) use($request){
             if($request->has('student_id')){
                 $query->where('student_id', $request->student_id);
             }
         })->get()->load('subject');
         return $this->apiResponse(1, '', $result);
-    }
+    }*/
 
     public function grade(Request $request){
         $grade = Grade::with(['subjects.results' => function($query) use($request){
