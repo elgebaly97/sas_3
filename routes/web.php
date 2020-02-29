@@ -68,10 +68,10 @@ Route::middleware(['auth:student'])->prefix('student')->group(function () {
     Route::get('/', 'StudentController@index')->name('student.dashboard');
     Route::get('dashboard', 'StudentController@index')->name('student.dashboard');
     Route::post('logout', 'Auth\StudentLoginController@logout')->name('student.auth.logout');
-    Route::get('group', function(){return view('./student/group');})->name('student.group');
-    Route::get('subjects', function(){return view('./student/subjects');})->name('student.subjects');
+    //Route::get('group', function(){return view('./student/group');})->name('student.group');
+    //Route::get('subjects', function(){return view('./student/subjects');})->name('student.subjects');
     Route::get('assignments', 'AssignmentController@index')->name('student.assignments');
-    Route::get('tables', function(){return view('./student/tables');})->name('student.tables');
+    //Route::get('tables', function(){return view('./student/tables');})->name('student.tables');
     Route::get('events', 'EventController@index')->name('student.events');
     Route::get('subject','SubjectController@index')->name('subject');
     Route::get('subject/{subject}','SubjectController@show')->name('student.subject');
