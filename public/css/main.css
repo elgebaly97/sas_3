@@ -1,3 +1,7 @@
+html
+{
+    height: 100%;
+}
 body
 {
     background-attachment: fixed;
@@ -5,11 +9,16 @@ body
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x:hidden;
+
 }
 
 /* LOGIN page */
 
-    /* NAVBAR section */
+/* NAVBAR section */
 .navbar
 {
     background-color: #002942;
@@ -20,7 +29,24 @@ nav .navbar-brand
     padding: 0%;
     height: 52px;
 }
-
+nav .navbar-right ul
+{
+    display: flex;
+    margin: 0%;
+}
+nav .navbar-right ul li
+{
+    padding: 5px;
+}
+nav .navbar-right ul li:nth-child(2)
+{
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+.navbar-right a
+{
+    text-decoration-line: none;
+}
 nav span
 {
     margin-left: 10px;
@@ -97,7 +123,7 @@ header p
 form
 {
     margin: 30px 0 70px 0;
-    
+
 }
 .input-group
 {
@@ -153,11 +179,6 @@ footer
 {
     background-color: #002942;
 }
-footder .row
-{
-    display: flex;
-    align-items: center;
-}
 footer .row div:nth-child(3), footer .row div:nth-child(2), footer .row div:nth-child(1)
 {
     padding: 5px 0 5px 0;
@@ -165,7 +186,7 @@ footer .row div:nth-child(3), footer .row div:nth-child(2), footer .row div:nth-
 footer ul
 {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     color: #ffffff;
     margin: 10px 0 10px 0;
 }
@@ -181,16 +202,439 @@ footer ul li a:hover
     text-decoration: none;
 
 }
-
 footer p
 {
     text-align: center;
     color: #ffffff;
     margin: 10px 0 10px 0;
 }
+/*nnneeewwww*/
+
+
+.container {
+    position: relative;
+    margin: 0px auto;
+    padding: 10px;
+    clear: both;
+}
+.sidenav
+{
+    margin: 0 15px 0 15px;
+}
+
+
+.mcd-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #002942;
+    /*height: 100px;*/
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+
+    /* == */
+    width: 250px;
+    /* == */
+}
+.mcd-menu li {
+    position: relative;
+    /*float:left;*/
+}
+.mcd-menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 7px 20px 12px 20px;
+    color: #fff;
+    justify-content: baseline;
+    /*text-align: center;
+    border-right: 1px solid #E7E7E7;*/
+
+    /* == */
+    text-align: left;
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid #EEE;
+    /* == */
+}
+.mcd-menu li a img {
+    /*display: block;
+    font-size: 30px;
+    margin-bottom: 10px;*/
+
+    /* == */
+    padding-top: 15px;
+    float: left;
+    margin: 0px 10px 0 -10px;
+    /* == */
+}
+
+
+.mcd-menu li a strong {
+    display: block;
+    text-transform: uppercase;
+    padding-top: 25px;
+}
+
+
+.mcd-menu li:hover > a i {
+    opacity: 1;
+    -webkit-animation: moveFromTop 300ms ease-in-out;
+    -moz-animation: moveFromTop 300ms ease-in-out;
+    -ms-animation: moveFromTop 300ms ease-in-out;
+    -o-animation: moveFromTop 300ms ease-in-out;
+    animation: moveFromTop 300ms ease-in-out;
+}
+.mcd-menu li:hover a strong {
+    opacity: 1;
+    -webkit-animation: moveFromLeft 300ms ease-in-out;
+    -moz-animation: moveFromLeft 300ms ease-in-out;
+    -ms-animation: moveFromLeft 300ms ease-in-out;
+    -o-animation: moveFromLeft 300ms ease-in-out;
+    animation: moveFromLeft 300ms ease-in-out;
+}
+
+.mcd-menu li:hover > a {
+    color: #FB9854;
+    border-bottom: 1px solid #FB9854;
+
+}
+.mcd-menu li a.active {
+    position: relative;
+    color: #FB9854;
+    border:0;
+    border-top: 1px solid #FB9854;
+    border-bottom: 1px solid #FB9854;
+    box-shadow: 0 0 5px #FB9854;
+    -moz-box-shadow: 0 0 5px #FB9854;
+    -webkit-box-shadow: 0 0 5px #FB9854;
+
+    /* == */
+    border-left: 4px solid #FB9854;
+    border-right: 4px solid #FB9854;
+    margin: 0 -4px;
+    /* == */
+}
+.mcd-menu li a.active:before {
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: 0;
+    border-left: 5px solid #FB9854;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    /*top: 0;
+    left: 45%;
+    border-top: 5px solid #FB9854;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    */
+}
+
+/* == */
+.mcd-menu li a.active:after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: 0;
+    border-right: 5px solid #FB9854;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    /* top: 0;
+      left: 45%;
+   border-top: 5px solid #FB9854;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;  */
+
+}
+/* == */
+
+@-webkit-keyframes moveFromTop {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(200%);
+        -moz-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+        -o-transform: translateY(200%);
+        transform: translateY(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes moveFromLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+        -moz-transform: translateX(200%);
+        -ms-transform: translateX(200%);
+        -o-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes moveFromRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(-200%);
+        -moz-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+        -o-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
 
 
 
+.mcd-menu li ul,
+.mcd-menu li ul li ul {
+    position: absolute;
+    height: auto;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    background: #002942;
+    /*border-top: 4px solid #FB9854;*/
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms linear;
+    -o-transition: all 500ms linear;
+    -ms-transition: all 500ms linear;
+    -moz-transition: all 500ms linear;
+    -webkit-transition: all 500ms linear;
+    /*top: 130px;*/
+    z-index: 1000;
+
+    /* == */
+    left:280px;
+    top: 0px;
+    border-left: 4px solid #FB9854;
+    /* == */
+}
+.mcd-menu li ul:before {
+    content: "";
+    position: absolute;
+    /*top: -8px;
+    left: 23%;
+    border-bottom: 5px solid #FB9854;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;*/
+
+    /* == */
+    top: 27%;
+    left: -9px;
+    border-right: 5px solid #FB9854;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    /* == */
+}
+.mcd-menu li:hover > ul,
+.mcd-menu li ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    /*top: 100px;*/
+
+    /* == */
+    left:250px;
+    /* == */
+}
+/*.mcd-menu li ul li {
+  float: none;
+}*/
+.mcd-menu li ul li a {
+    padding: 10px;
+    text-align: left;
+    border: 0;
+    border-bottom: 1px solid #EEE;
+
+    /* == */
+    height: auto;
+    /* == */
+}
+/* inner icons */
+.mcd-menu li ul li a i {
+    font-size: 16px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+.mcd-menu li ul li ul {
+    left: 230px;
+    top: 0;
+    border: 0;
+    border-left: 4px solid #FB9854;
+}
+.mcd-menu li ul li ul:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    /*left: -14px;*/
+    /* == */
+    left: -9px;
+    /* == */
+    border-right: 5px solid #FB9854;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+}
+.mcd-menu li ul li:hover > ul {
+    top: 0px;
+    left: 200px;
+}
+
+
+
+/*.mcd-menu li.float {
+  float: right;
+}*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    .mcd-menu li a i {
+        font-size: 22px;
+    }
+    .mcd-menu li a strong {
+        font-size: 12px;
+    }
+
+    .mcd-menu li > ul {
+        min-width:180px;
+    }
+    .mcd-menu li:hover > ul {
+        min-width:180px;
+        left:200px;
+    }
+    .mcd-menu li ul li > ul, .mcd-menu li ul li ul li > ul {
+        min-width:150px;
+    }
+    .mcd-menu li ul li:hover > ul {
+        left:180px;
+        min-width:150px;
+    }
+    .mcd-menu li ul li ul li:hover > ul {
+        left:150px;
+        min-width:150px;
+    }
+    .mcd-menu li ul a {
+        font-size:12px;
+    }
+    .mcd-menu li ul a i {
+        font-size:14px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .mcd-menu {
+        width: 70px;
+    }
+    .mcd-menu li a {
+        position: relative;
+        padding: 3px 28px;
+    }
+    .mcd-menu li a .profile
+    {
+        margin-left: -14px;
+        padding-top: 5px;
+
+    }
+    .mcd-menu li a strong {
+        display:block;
+        font-size:9px;
+        padding:3px 0;
+        position:absolute;
+        bottom:0px;
+        left:0;
+        background:#FB9854;
+        color:#FFF;
+        min-width:100%;
+        font-weight:normal;
+        text-align:center;
+    }
+
+
+    .mcd-menu li > ul {
+        min-width:180px;
+        left:70px;
+    }
+    .mcd-menu li:hover > ul {
+        min-width:180px;
+        left:50px;
+    }
+    .mcd-menu li ul li > ul {
+        min-width:150px;
+    }
+    .mcd-menu li ul li:hover > ul {
+        left:180px;
+        min-width:150px;
+    }
+    .mcd-menu li ul li ul li > ul {
+        left:35px;
+        top: 45px;
+        border:0;
+        border-top:4px solid #FB9854;
+    }
+    .mcd-menu li ul li ul li > ul:before {
+        left:30px;
+        top: -9px;
+        border:0;
+        border-bottom:5px solid #FB9854;
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+    }
+    .mcd-menu li ul li ul li:hover > ul {
+        left:30px;
+        min-width:150px;
+        top: 35px;
+    }
+    .mcd-menu li ul a {
+        font-size:12px;
+    }
+    .mcd-menu li ul a i {
+        font-size:14px;
+    }
+
+}
+
+/* profile */
+.panel
+{
+    background: none;
+    padding: 15px;
+    border: 1px solid #FB9854;
+    box-shadow: 0 0 10px 1px #FB9854;
+}
+
+.panel div:first-child{
+    display: flex;
+    justify-content: center;
+}
+.student-info
+{
+    margin: 10px;
+    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
+    color: #003b5f;
+}
 
 
 

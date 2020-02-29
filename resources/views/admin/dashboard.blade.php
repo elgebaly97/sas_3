@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+{{--@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -22,4 +22,21 @@
             </div>
         </div>
     </div>
+@endsection
+--}}
+
+@extends('admin.layouts.app')
+
+@section('content')
+
+
+    <div class="container text-center">
+        <h1>Hello Admin !</h1>
+        <h2>{{Auth::user()->name}}</h2>
+        <h3>{{Auth::user()->email}}</h3>
+    </div>
+
+
+
+
 @endsection

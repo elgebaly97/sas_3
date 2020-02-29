@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Professor;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Admin;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -13,7 +18,9 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('admin.dashboard');
+        $admin = Auth::user();
+        return view('admin.dashboard', compact('admin'));
+        //dd($admin);
     }
 
     public function create(){
@@ -55,6 +62,96 @@ class AdminController extends Controller
 
     public function delete($id){
 
+    }
+
+
+    public function viewStudents(){
+        $studentss = Student::all()->where('department_id', request('department_id'));
+        $students = $studentss->where('grade_id', request('grade_id'));
+        return view('admin/viewstudents', compact('students'));
+        //dd($students);
+    }
+
+    public function viewProfessors(){
+        $professors = Professor::all()->where('department_id', request('department_id'));
+        return view('admin/viewprofessors', compact('professors'));
+        //dd($students);
+    }
+
+    public function viewEvents(){
+        $events = Event::all()->where('department_id', request('department_id'));
+        return view('admin/viewevents', compact('events'));
+
+    }
+
+
+    public function addStudent(){
+        return view('admin/addstudent');
+    }
+
+    public function storeStudent(){
+        $password = Hash::make(request('password'));
+        $validator = request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'faculty' => 'required',
+            'national_id' => 'required',
+            'faculty_id' => 'required',
+            'department_id' => 'required',
+            'grade_id' => 'required',
+        ]);
+
+        $validator['password'] = $password;
+
+        Student::create($validator);
+
+        return redirect('admin/view-students');
+    }
+
+
+    public function addprofessor(){
+        return view('admin/addprofessor');
+    }
+
+    public function storeProfessor(){
+        $password = Hash::make(request('password'));
+        $validator = request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'faculty' => 'required',
+            'national_id' => 'required',
+            'faculty_id' => 'required',
+            'department_id' => 'required',
+            'grade_id' => 'required',
+        ]);
+
+        $validator['password'] = $password;
+
+        Professor::create($validator);
+
+        return redirect('admin/view-professors');
+    }
+
+
+
+    public function addEvent(){
+        return view('admin/addevent');
+    }
+
+    public function storeEvent(){
+        $validator = request()->validate([
+            'title' => 'required',
+            'department_id' => 'required',
+            'day' => 'required',
+            'owner' => 'required',
+            'image' => 'required'
+        ]);
+
+        Event::create($validator);
+
+        return redirect('admin/view-events');
     }
 
 
