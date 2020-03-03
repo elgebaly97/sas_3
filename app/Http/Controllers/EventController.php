@@ -14,4 +14,30 @@ class EventController extends Controller
         return view('student.events', compact('events'));
 
     }
+
+    /*public function store(Request $request)
+    {
+        $events = new Appsetting();
+
+        $events->title = $request->input('title');
+        $events->description = $request->input('day');
+
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/appsetting/', $filename);
+
+//see above line.. path is set.(uploads/appsetting/..)->which goes to public->then create
+//a folder->upload and appsetting, and it wil store the images in your file.
+
+            $events->image = $filename;
+        } else {
+            return $request;
+            $events->image = '';
+        }
+        $events->save();
+
+        return redirect('pagesurl')->with('success', 'App Setting Added');
+    }*/
 }

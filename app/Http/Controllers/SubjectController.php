@@ -48,9 +48,9 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        $subject = Subject::find($id);
-        $marks = Auth::user()->marks->where('subject_id', $subject->id);
-        return view('student/subject', compact('subject', 'marks'));
+        $subjected = Subject::find($id);
+        $marks = Auth::user()->marks->where('subject_id', $subjected->id);
+        return view('student/subject', compact('subjected', 'marks'));
         //$marks = Auth::user()->marks->where('subject_id', $subject->id);
         //return $mark;
 

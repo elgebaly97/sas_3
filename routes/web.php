@@ -11,12 +11,13 @@
 |
 */
 
+// make it comment for heroku
 /*
 Route::get('/', function () {
     return view('welcome');
 })->name('whome');
-
 */
+
 
 
 Auth::routes();
