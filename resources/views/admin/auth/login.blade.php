@@ -82,11 +82,12 @@
 --}}
 
 
-@extends('admin.layouts.layout')
+@extends('student.layouts.layout')
 
 
 
 @section('content')
+
 
     <!-- start navbar -->
     <nav class="navbar">
@@ -100,6 +101,7 @@
             </div>
         </div>
     </nav>
+
 
 
     <!-- FORM section -->
@@ -175,6 +177,7 @@
     </section>
 
     <!-- FOOTER section -->
+
     <footer>
         <div class="container">
             <div class="row">

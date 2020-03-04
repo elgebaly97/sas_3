@@ -770,3 +770,11 @@ table > tr{
 .card:hover {
     box-shadow: 0 0 7px 3px #FB9854;
 }
+
+.space-shift{
+    width: 100%;
+}
+
+.orange-color{
+    color: #FB9854 !important;
+}
