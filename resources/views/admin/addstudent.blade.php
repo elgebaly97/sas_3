@@ -2,50 +2,46 @@
 
 @section('content')
 
-{{--
-<div class="container">
-    <div class="text-center">
-        <h2>Add Student</h2>
-    </div>
 
 
 
-    <form method="post" action="store-student">
+    <form class="view-std" method="post" action="store-student">
         @csrf
+        <div class="input-group col-sm-push-3 col-sm-6 col-xs-9">
 
-        <div class="form-group">
+
             <input type="text" name="name" class="form-control" id="" placeholder="Name">
-        </div>
 
-        <div class="form-group">
+
+
             <input type="email" name="email" class="form-control" id="" placeholder="Email">
-        </div>
 
-        <div class="form-group">
+
+
             <input type="password" name="password" class="form-control" id="" placeholder="Password">
-        </div>
 
-        <div class="form-group">
+
+
             <input type="text" name="faculty" class="form-control" id="" placeholder="Faculty">
-        </div>
 
-        <div class="form-group">
-            <input type="number" name="national_id" class="form-control" id="" placeholder="National_id">
-        </div>
 
-        <div class="form-group">
-            <input type="number" name="faculty_id" class="form-control" id="" placeholder="Faculty_id">
-        </div>
 
-        <div class="form-group">
+            <input type="number" name="national_id" class="form-control" id="" placeholder="National id">
+
+
+
+            <input type="number" name="faculty_id" class="form-control" id="" placeholder="Faculty id">
+
+
+
             <select name="department_id" class="form-control">
                 <option style="color: #ced4da;">Department</option>
                 <option value="1">Communications</option>
                 <option value="2">Electrical</option>
             </select>
-        </div>
 
-        <div class="form-group">
+
+
             <select name="grade_id" class="form-control">
                 <option style="color: #ced4da;">Grade</option>
                 <option value="1">First</option>
@@ -53,14 +49,14 @@
                 <option value="3">Third</option>
                 <option value="4">Fourth</option>
             </select>
+
+
+            <input type="submit" class="btn btn-lg form-control" value="Add Student">
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-
     </form>
 
-</div>
---}}
+
+
 
 
 <!--form section-->
@@ -120,7 +116,7 @@
 
 
 </form>
---}}
+{{--
 
 <div class="col-xs-2 space-shift"></div>
 <div class="col-xs-6">
@@ -175,7 +171,7 @@
 </div>
 
 
-
+--}}
 
 
 

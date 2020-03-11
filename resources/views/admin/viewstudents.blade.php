@@ -63,7 +63,8 @@
             <option value="4" {{ old('grade_id', request('grade_id')) == 4 ? 'selected' : '' }}>Fourth</option>
         </select>
 
-        <button type="submit" class="btn btn-warning">View Students</button>
+
+        <input type="submit" class="btn btn-lg form-control" value="View Students">
 
 
     </div>

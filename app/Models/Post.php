@@ -9,7 +9,7 @@ class Post extends Model
 
     protected $table = 'posts';
     public $timestamps = true;
-    protected $fillable = array('student_id', 'professor_id', 'title', 'body');
+    protected $fillable = array('student_id', 'professor_id', 'title', 'body', 'group_id');
 
     public function student()
     {
@@ -29,6 +29,11 @@ class Post extends Model
     public function notification()
     {
         return $this->hasOne('App\Models\Notification');
+    }
+
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Group');
     }
 
 }

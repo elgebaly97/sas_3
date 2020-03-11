@@ -54,38 +54,30 @@
 --}}
 
 
-    <div class="col-xs-2 space-shift"></div>
-    <div class="col-xs-6">
-        <form method="post" action="store-event">
+
+        <form class="view-std" method="post" action="store-event">
             @csrf
+            <div class="input-group col-sm-push-3 col-sm-6 col-xs-9">
 
-            <div class="form-group">
                 <input type="text" name="title" class="form-control" id="" placeholder="Title">
-            </div>
 
-            <div class="form-group">
                 <input type="text" name="image" class="form-control" id="" placeholder="Image">
-            </div>
 
-            <div class="form-group">
                 <input type="date" name="day" class="form-control orange-color" id="" placeholder="Day">
-            </div>
 
-            <div class="form-group">
                 <input type="text" name="owner" class="form-control" id="" placeholder="Owner">
-            </div>
 
 
-            <div class="form-group">
                 <select name="department_id" class="form-control">
                     <option style="color: #ced4da;">Department</option>
                     <option value="1">Communications</option>
                     <option value="2">Electrical</option>
                 </select>
+
+
+
+            <input type="submit" class="btn btn-lg form-control" value="Add Events">
             </div>
-
-
-            <button type="submit" class="btn btn-warning">Add Event</button>
 
         </form>
     </div>

@@ -21,4 +21,9 @@ class Comment extends Model
         return $this->hasMany('App\Models\CommentReply');
     }
 
+    public function student()
+    {
+        return $this->belongsTo('App\Models\Student');
+    }
+
 }

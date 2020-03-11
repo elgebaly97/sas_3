@@ -45,7 +45,7 @@
             <option value="2" {{ old('department_id', request('department_id')) == 2 ? 'selected' : '' }}>Electrical</option>
         </select>
 
-        <button type="submit" class="btn btn-warning">View Events</button>
+        <input type="submit" class="btn btn-lg form-control" value="View Events">
 
 
     </div>
@@ -53,13 +53,12 @@
 </form>
 
 
-<div class="col-sm-push-2 col-xs-8">
     <div class="col-sm-push-2 col-xs-8 text-center">
         <div class="row">
             @foreach($events as $event)
                 <div class="col-md-5 col-xs-12">
                     <div class="card">
-                        <img class="img-responsive" src="{{asset('asset/images')}}/{{$event->image}}" alt="pic" style="width:100%">
+                        <img class="img-uresponsive" width="200" height="150" src="{{asset('asset/images')}}/{{$event->image}}" alt="pic" style="width:100%">
                         <div class="card-info">
                             <h4><b>{{$event->title}}</b></h4>
                             <p>Leorem ipsum Leorem ipsum Leorem ipsum Leorem ipsum</p>
@@ -72,7 +71,7 @@
 
         </div>
     </div>
-</div>
+
 
 
 

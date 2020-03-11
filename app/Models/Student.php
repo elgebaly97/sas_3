@@ -68,4 +68,14 @@ class Student extends Authenticatable
         return $this->hasMany('App\Models\Subject');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany('App\Models\CommentReply');
+    }
+
 }

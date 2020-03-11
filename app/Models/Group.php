@@ -31,4 +31,9 @@ class Group extends Model
         return $this->belongsToMany('App\Models\Professor');
     }
 
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+
 }

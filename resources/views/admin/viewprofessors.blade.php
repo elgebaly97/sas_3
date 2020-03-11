@@ -45,7 +45,7 @@
                 <option value="2" {{ old('department_id', request('department_id')) == 2 ? 'selected' : '' }}>Electrical</option>
             </select>
 
-            <button type="submit" class="btn btn-warning">View Professors</button>
+            <input type="submit" class="btn btn-lg form-control" value="View Professors">
 
 
         </div>
