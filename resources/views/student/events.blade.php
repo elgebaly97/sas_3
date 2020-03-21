@@ -19,18 +19,7 @@
 
 --}}
 
-    <!-- start navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xs-9 navbar-left">
-                    <img src="{{asset('asset/images/badge.png')}}" class="img img-responsive navbar-brand"
-                         alt="Mansoura university badge" />
-                    <span><a href="{{route('whome')}}" style="color: white;text-decoration: none">Student administration system</a></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+
 
     <!-- start sidebar -->
 
@@ -132,32 +121,6 @@
             </div>
         </div>
     </div>
-    <!-- FOOTER section -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <ul class="list-unstyled">
-                        <li><a href="#"><img src="{{asset('asset/images/web-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/face-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/insta-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/twitter-icon.svg')}}" /></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <p><bdi>جميع الحقوق محفوظة &copy; مركز تقنية المعلومات - جامعة المنصورة</bdi>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 
 

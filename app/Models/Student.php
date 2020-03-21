@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Student extends Authenticatable
 {
+    use Notifiable;
 
     protected $table = 'students';
     public $timestamps = true;
@@ -33,10 +34,6 @@ class Student extends Authenticatable
         return $this->hasMany('App\Models\Result');
     }
 
-    public function notifications()
-    {
-        return $this->belongsToMany('App\Models\Notification');
-    }
 
     public function posts()
     {
@@ -76,6 +73,11 @@ class Student extends Authenticatable
     public function replies()
     {
         return $this->hasMany('App\Models\CommentReply');
+    }
+
+    public function receivesBroadcastNotificationsOn()
+    {
+        return 'App.Models.Student.'.$this->id;
     }
 
 }

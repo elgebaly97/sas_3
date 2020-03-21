@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Student;
-use App\Notifications\MakePost;
-use http\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Notification;
 
-class PostController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return compact($posts);
+        return view('chat');
     }
 
     /**
@@ -39,22 +32,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $post = new Post();
-        $post->student_id = Auth::user()->id;
-        $post->body = request('post-content');
-        $post->group_id = Auth::user()->group_id;
-        $post->save();
-        /*$validator = request()->validate([
-            'post-content' => 'required',
-        ]);
-             Post::create($validator);*/
-
-        //$post->group->notify(new MakePost($post));
-        $students = Student::all()->where('group_id', $post->group_id);
-        Notification::send($students, new MakePost($post));
-        return 'Post created';
+        //
     }
 
     /**

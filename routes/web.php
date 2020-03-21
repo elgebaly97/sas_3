@@ -59,7 +59,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
 
 
 /* -----------------ROUTE FOR STUDENTS----------  */
-
+//Route::any ( 'search','SearchController@search')->name('search');
 Route::get('student/register', 'StudentController@create')->name('student.register');
 Route::post('student/register', 'StudentController@store')->name('student.register.store');
 Route::get('student/login', 'Auth\StudentLoginController@login')->name('student.auth.login');
@@ -72,7 +72,7 @@ Route::middleware(['auth:student'])->prefix('student')->group(function () {
     Route::get('group', 'GroupController@index')->name('student.group');
     //Route::get('group','PostController@index');
     Route::post('group/posts','PostController@store');
-    Route::post('group/posts/{post}/comments','PostCommentsController@store');
+    Route::post('group/posts/{post?}/comments','PostCommentsController@store');
     Route::post('group/posts/{post}/comments/{comment}','CommentRepliesController@store');
     //Route::get('subjects', function(){return view('./student/subjects');})->name('student.subjects');
     Route::get('assignments', 'AssignmentController@index')->name('student.assignments');
@@ -80,9 +80,25 @@ Route::middleware(['auth:student'])->prefix('student')->group(function () {
     Route::get('events', 'EventController@index')->name('student.events');
     Route::get('subject','SubjectController@index')->name('subject');
     Route::get('subject/{subject}','SubjectController@show')->name('student.subject');
+    Route::any ( 'search','SearchController@search')->name('search');
+    Route::any ( 'searchprof','SearchController@searchProf')->name('searchprof');
+    Route::get ( 'chat','ChatController@index')->name('chat');
+//    Route::get('group/test', function(){
+//        $notifications=auth()->user()->unreadNotifications;
+//        foreach ($notifications as $notification){
+//            dd($notification->data['user']['name']);
+//        }
+//    });
+//    Route::get('markAsRead', function(){
+//        auth()->user()->unreadNotifications->markAsRead();
+//    });
+
 
 });
 
+/*Route::get('/public/markAsRead', function(){
+    auth()->user()->unreadNotifications->markAsRead();
+});*/
 
 
 /* -----------------ROUTE FOR PROFESSORS----------  */

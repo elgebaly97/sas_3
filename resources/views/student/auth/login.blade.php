@@ -85,18 +85,7 @@
 
 @section('content')
 
-    <!-- start navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xs-9 navbar-left">
-                    <img src="{{asset('asset/images/badge.png')}}" class="img img-responsive navbar-brand"
-                         alt="Mansoura university badge" />
-                    <span><a href="{{route('whome')}}" style="color: white;text-decoration: none">Student administration system</a></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+
 
 
     <!-- FORM section -->

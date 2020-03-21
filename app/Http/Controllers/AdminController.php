@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -103,6 +104,8 @@ class AdminController extends Controller
         ]);
 
         $validator['password'] = $password;
+        //'api_token' => Str::random(60),
+        $validator['api_token'] = Str::random(60);
 
         Student::create($validator);
 
@@ -128,6 +131,7 @@ class AdminController extends Controller
         ]);
 
         $validator['password'] = $password;
+        $validator['api_token'] = Str::random(60);
 
         Professor::create($validator);
 

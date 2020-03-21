@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\CommentReply;
 use App\Models\Post;
+use App\Notifications\CommentOnPost;
+use App\Notifications\ReplyOnComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,7 +45,9 @@ class CommentRepliesController extends Controller
         $reply->student_id = Auth::user()->id;
         $comment = Comment::find($request->comment_id);
         $comment->replies()->save($reply);
-        return back();
+
+        $comment->student->notify(new ReplyOnComment($comment));
+        return 'Reply Created';
 
     }
 

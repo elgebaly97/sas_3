@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
+use App\Notifications\CommentOnPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,7 +46,9 @@ class PostCommentsController extends Controller
         $post = Post::find($request->post_id);
         $post->comments()->save($comment);
 
-        return back();
+        $post->student->notify(new CommentOnPost($post));
+
+        return 'Comment Created';
         //dd($comment);
     }
 

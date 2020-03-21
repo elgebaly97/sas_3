@@ -1,20 +1,9 @@
 @extends('student.layouts.layout')
 
+
+
 @section('content')
 
-    {{--
-    <h1>Assignments</h1>
-
-
-    @foreach($assignments as $assignment)
-
-        <h3>{{$assignment->title}}</h3>
-        <a>{{$assignment->path}}</a>
-
-
-
-    @endforeach
---}}
 
 
 
@@ -27,7 +16,7 @@
             <nav class="sidenav col-xs-2">
                 <ul class="mcd-menu">
                     <li>
-                        <a href="{{route('student.dashboard')}}" class="active">
+                        <a href="{{route('student.dashboard')}}" class="">
                             <img src="{{asset('asset/images/photo icon.svg')}}" class="profile">
                             <strong>Profile</strong>
                         </a>
@@ -94,35 +83,29 @@
                 </ul>
             </nav>
 
-            <!-- ASSIGNMENTS -->
-            <div class="col-sm-push-2 col-xs-8">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Subject</th>
-                        <th>Professor</th>
-                        <th>Title</th>
-                        <th>Assignment</th>
-                        <th>Created_at</th>
-                    </tr>
+            <!--profile info -->
 
-                    </thead>
-                    <tbody>
-                    @foreach($assignments as $assignment)
-                    <tr>
-                        <td>{{$assignment->subject->name}}</td>
-                        <td>DR : {{$assignment->professor->name}}</td>
-                        <td>{{$assignment->title}}</td>
-                        <td><a href="{{$assignment->path}}">link</a></td>
-                        <td>{{$assignment->created_at}}</td>
-                    </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+
+
+                    <div class="col-sm-push-2 col-xs-8">
+
+
+                    </div>
+
+
+
 
         </div>
     </div>
+    </div>
+    </div>
+
+
+    <!-- profile datails
+    <div class="container">
+        <div class="row"> -->
+
+
 
 
 
