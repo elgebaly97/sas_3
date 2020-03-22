@@ -201,4 +201,26 @@ class ApiController extends Controller
         return $this->apiResponse(1, '', $newMark);
     }
 
+    public function assignProf(){
+        $assigns = auth()->user()->assignments->load('subject','grade','professor.department');
+        return $this->apiResponse(1, '', $assigns);
+    }
+
+
+    public function sourceProf(){
+        $source = auth()->user()->sources->load('subject','grade','professor.department');
+        return $this->apiResponse(1, '', $source);
+    }
+
+    public function allDepartments(){
+        $departments = Department::all();
+        return $this->apiResponse(1,'',$departments);
+    }
+
+    public function allGrades(){
+        $grades = Grade::all();
+        return $this->apiResponse(1,'',$grades);
+    }
+
+
 }

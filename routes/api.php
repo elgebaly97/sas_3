@@ -47,6 +47,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::get('departments', 'ApiController@departments');
     Route::get('grades', 'ApiController@grades');
 
+    Route::get('all-departments', 'ApiController@allDepartments');
+    Route::get('all-grades', 'ApiController@allGrades');
+
 
 
 
@@ -72,6 +75,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
         Route::get('student-grade', 'ApiController@studentsGrade');
 
         Route::post('profile-professor', 'AuthController@profileProfessor');
+        Route::get('assigns', 'ApiController@assignProf');
+        Route::get('source-prof', 'ApiController@sourceProf');
 
 
 

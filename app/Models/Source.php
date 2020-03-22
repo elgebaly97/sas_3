@@ -24,4 +24,9 @@ class Source extends Model
     {
         return $this->belongsTo('App\Models\Professor');
     }
+
+    public function grade()
+    {
+        return $this->belongsTo('App\Models\Grade');
+    }
 }

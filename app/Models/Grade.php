@@ -46,4 +46,9 @@ class Grade extends Model
     {
         return $this->belongsToMany('App\Models\Term');
     }
+
+    public function sources()
+    {
+        return $this->hasMany('App\Models\Source');
+    }
 }
