@@ -176,8 +176,8 @@ class ApiController extends Controller
 
     public function studentsGrade(Request $request){
         $students = Student::where(function($query) use($request){
-            if($request->has('grade_id')){
-                $query->where('grade_id', $request->grade_id);
+            if(($request->has('department_id')) and ($request->has('grade_id'))){
+                $query->where('department_id', $request->department_id)->where('grade_id', $request->grade_id);
             }
         })->get();
         return $this->apiResponse(1, '', $students);
