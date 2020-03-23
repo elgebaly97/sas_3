@@ -9,7 +9,7 @@ class CommentReply extends Model
 
     protected $table = 'comment_replies';
     public $timestamps = true;
-    protected $fillable = array('comment_id', 'body', 'email');
+    protected $fillable = array('comment_id', 'body', 'email','student_id');
 
     public function comment()
     {

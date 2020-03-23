@@ -24,7 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-
 Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::post('register-student', 'AuthController@registerStudent');
     Route::post('login-student', 'AuthController@loginStudent');
@@ -59,6 +58,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::group(['middleware' => 'auth:student-api'],function()
     {
         Route::post('profile', 'AuthController@profileStudent');
+        Route::get('posts', 'ApiController@posts');
+        Route::post('make-post', 'ApiController@makePost');
+        Route::post('make-comment', 'ApiController@makeComment');
+        Route::post('make-reply', 'ApiController@makeReply');
 
 
 

@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Assignment;
+use App\Models\Comment;
+use App\Models\CommentReply;
 use App\Models\Department;
 use App\Models\Event;
 use App\Models\Grade;
+use App\Models\Group;
 use App\Models\Mark;
+use App\Models\Post;
 use App\Models\Result;
 use App\Models\Source;
 use App\Models\Student;
@@ -220,6 +224,66 @@ class ApiController extends Controller
     public function allGrades(){
         $grades = Grade::all();
         return $this->apiResponse(1,'',$grades);
+    }
+
+
+
+    // ********************* API For Groups *********************
+
+    public function posts(){
+        $posts = Post::all()->where('group_id', auth()->user()->group_id)->load('student','comments.replies');
+        return $this->apiResponse(1,'',$posts);
+    }
+
+    public function makePost(Request $request){
+        $validator = validator()->make($request->all(), [
+            'body' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+        //$validator->group_id = auth()->user()->group_id;
+        $post = new Post();
+        $newPost = $post->create($request->all());
+        $newPost->group_id = auth()->user()->group_id;
+        $newPost->student_id = auth()->user()->id;
+        $newPost->save();
+        return $this->apiResponse(1, 'Done', $newPost->load('student'));
+    }
+
+    public function makeComment(Request $request){
+        $validator = validator()->make($request->all(), [
+            'body' => 'required',
+            'post_id' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $comment = new Comment();
+        $newComment = $comment->create($request->all());
+        $newComment->student_id = auth()->user()->id;
+        $newComment->save();
+        return $this->apiResponse(1, 'Done', $newComment->load('student'));
+    }
+
+    public function makeReply(Request $request){
+        $validator = validator()->make($request->all(), [
+            'body' => 'required',
+            'comment_id' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+
+        $reply = new CommentReply();
+        $newReply = $reply->create($request->all());
+        $newReply->student_id = auth()->user()->id;
+        $newReply->save();
+        return $this->apiResponse(1, 'Done', $newReply->load('student'));
     }
 
 
