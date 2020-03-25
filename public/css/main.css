@@ -553,6 +553,222 @@ footer p
 }*/
 
 
+
+/* profile */
+.panel
+{
+    background: none;
+    padding: 15px;
+    border: 1px solid #FB9854;
+    box-shadow: 0 0 10px 1px #FB9854;
+}
+
+.panel div:first-child{
+    display: flex;
+    justify-content: center;
+}
+.student-info
+{
+    margin: 10px;
+    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
+    color: #003b5f;
+}
+
+/*Assignment section */
+.table
+{
+    border: 1px solid #FB9854;
+    box-shadow: 0 0 10px 1px #FB9854;
+    margin:20px
+}
+table > tr{
+    margin: 10px;
+    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
+    color: #003b5f;
+}
+.table > tbody > tr > td
+{
+    margin: 10px;
+    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
+    color: #003b5f;
+    font-size: 16px;
+    padding: 20px 10px;
+    text-align: center;
+
+
+}
+.table > thead > tr > th
+{
+    border-bottom: 2px solid #FB9854;
+    color: #003b5f;
+    font-size: 16px;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+/*tables sec*/
+.tables-sec button
+{
+    background-color: #002942;
+    color: #FFF;
+    border-radius: 0px;
+    font-size: 18px;
+    margin: 20px;
+    padding: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.tables-sec button:hover, .tables-sec button:focus
+{
+    color: #FB9854;
+}
+
+.inner-tables
+{
+    padding: 20px;
+    margin-bottom: 20px;
+    background:none;
+}
+
+
+/************* GROUPS ***************/
+
+.post
+{
+    background-color: #FFF !important;
+    color: #002b5f;
+    border-radius: 1%;
+    border: #00243a 1px solid;
+    margin: 20px;
+}
+.post-divs{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    border-bottom: #FB9854 1px solid;
+}
+.post-divs:nth-of-type(2){
+    display: block;
+}
+.post div:last-of-type, .post div:nth-of-type(4)
+{
+    border-bottom: none;
+}
+.post-divs input:first-of-type
+{
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+}
+.post-btns
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.post-btns button
+{
+    border-radius: 0%;
+    background: none;
+    font-weight: 700;
+    font-size: 17px;
+    color: #003b5f;
+    letter-spacing: 2px;
+    flex: 1;
+}
+.post-btns button:hover
+{
+    color: #FB9854;
+}
+.post-btns button:nth-of-type(1), .post-btns button:nth-of-type(2)
+{
+    border-right: #FB9854 1px solid;
+}
+.post-btns button:nth-of-type(4){
+    border-radius: 0%;
+    background-color: #003b5f;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+#cmts
+{
+    border-top: #003b5f 1px solid;
+    font-style: italic;
+    font-size: 17px;
+    background-color: #e8c4ac;
+    margin-bottom:-5px;
+}
+#post-sec div:nth-of-type(5)
+{
+    display: none;
+}
+/*.post:nth-of-type(2), .post:nth-of-type(3)
+{
+    display: none;
+}*/
+/************* COMMENT ************/
+
+.wrt-cmt{
+    display: flex;
+    background-color: #FFF;
+    color: #00243a;
+    border-radius: 1%;
+    border: #00243a 1px solid;
+    margin:-20px 20px 0px 20px;
+}
+#posts-box section:nth-last-of-type(1)
+{
+    /*display: none;*/
+}
+
+#bodyText
+{
+    width: 92%; border: none; padding: 10px 0;
+}
+#addComment
+{
+    border: none; margin-left: 5px; border-radius:0px; background-color: #003b5f; color: #FFF;
+}
+/************cards*************/
+.card {
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 15px;
+    box-shadow: 0 0 5px 1px #FB9854;
+    -moz-box-shadow: 0 0 5px 1px #FB9854;
+    -webkit-box-shadow: 0 0 5px 1px #FB9854;
+
+}
+.card-info
+{
+    color: #002942;
+}
+.card-info button
+{
+    background-color: #002942;
+    color: #fff;
+}
+.card-info button:hover, .card-info button:focus
+{
+    background-color: #002942;
+    color: #FB9854;
+}
+.card img
+{
+    border-radius:  0 0  5px 5px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 0 7px 3px #FB9854;
+}
+
+/*******MEDIA QUERY******/
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     .mcd-menu li a i {
@@ -658,124 +874,8 @@ footer p
     .mcd-menu li ul a i {
         font-size:14px;
     }
-
+    .post-btns button:nth-of-type(1), .post-btns button:nth-of-type(2)
+    {
+        border-right:none;
+    }
 }
-
-/* profile */
-.panel
-{
-    background: none;
-    padding: 15px;
-    border: 1px solid #FB9854;
-    box-shadow: 0 0 10px 1px #FB9854;
-}
-
-.panel div:first-child{
-    display: flex;
-    justify-content: center;
-}
-.student-info
-{
-    margin: 10px;
-    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
-    color: #003b5f;
-}
-
-/*Assignment section */
-.table
-{
-    border: 1px solid #FB9854;
-    box-shadow: 0 0 10px 1px #FB9854
-}
-table > tr{
-    margin: 10px;
-    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
-    color: #003b5f;
-}
-.table > tbody > tr > td
-{
-    margin: 10px;
-    border-bottom: 1px solid rgba(238, 140, 12, 0.353);
-    color: #003b5f;
-    font-size: 16px;
-    padding: 20px 10px;
-    text-align: center;
-
-
-}
-.table > thead > tr > th
-{
-    border-bottom: 2px solid #FB9854;
-    color: #003b5f;
-    font-size: 16px;
-    padding: 20px 10px;
-    text-align: center;
-}
-
-/*tables sec*/
-.tables-sec button
-{
-    background-color: #002942;
-    color: #FFF;
-    border-radius: 0px;
-    font-size: 18px;
-    margin: 20px;
-    padding: 10px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-.tables-sec button:hover, .tables-sec button:focus
-{
-    color: #FB9854;
-}
-
-.inner-tables
-{
-    padding: 20px;
-    margin-bottom: 20px;
-    background:none;
-}
-/************cards*************/
-.card {
-    /* Add shadows to create the "card" effect */
-    transition: 0.3s;
-    border-radius: 5px;
-    margin: 15px;
-    box-shadow: 0 0 5px 1px #FB9854;
-    -moz-box-shadow: 0 0 5px 1px #FB9854;
-    -webkit-box-shadow: 0 0 5px 1px #FB9854;
-
-}
-.card-info
-{
-    color: #002942;
-}
-.card-info button
-{
-    background-color: #002942;
-    color: #fff;
-}
-.card-info button:hover, .card-info button:focus
-{
-    background-color: #002942;
-    color: #FB9854;
-}
-.card img
-{
-    border-radius:  0 0  5px 5px;
-}
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 0 7px 3px #FB9854;
-}
-
-.space-shift{
-    width: 100%;
-}
-
-.orange-color{
-    color: #FB9854 !important;
-}
-

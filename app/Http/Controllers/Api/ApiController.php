@@ -232,7 +232,7 @@ class ApiController extends Controller
 
     public function posts(){
         $posts = Post::all()->where('group_id', auth()->user()->group_id)->load('student','comments.replies');
-        return $this->apiResponse(1,'',$posts);
+        return $this->apiResponse(1,'',$posts->last());
     }
 
     public function makePost(Request $request){
