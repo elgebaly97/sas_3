@@ -12,11 +12,11 @@
 */
 
 // make it comment for heroku
-/*
-Route::get('/', function () {
+
+/*Route::get('/', function () {
     return view('welcome');
-})->name('whome');
-*/
+})->name('whome');*/
+
 
 
 
@@ -74,9 +74,9 @@ Route::middleware(['auth:student'])->prefix('student')->group(function () {
     Route::post('group/posts','PostController@store');
     Route::post('group/posts/{post?}/comments','PostCommentsController@store');
     Route::post('group/posts/{post}/comments/{comment}','CommentRepliesController@store');
-    //Route::get('subjects', function(){return view('./student/subjects');})->name('student.subjects');
+    Route::get('subjects', function(){return view('./student/subjects');})->name('student.subjects');
     Route::get('assignments', 'AssignmentController@index')->name('student.assignments');
-    //Route::get('tables', function(){return view('./student/tables');})->name('student.tables');
+    Route::get('tables', function(){return view('./student/tables');})->name('student.tables');
     Route::get('events', 'EventController@index')->name('student.events');
     Route::get('subject','SubjectController@index')->name('subject');
     Route::get('subject/{subject}','SubjectController@show')->name('student.subject');
@@ -89,9 +89,9 @@ Route::middleware(['auth:student'])->prefix('student')->group(function () {
 //            dd($notification->data['user']['name']);
 //        }
 //    });
-//    Route::get('markAsRead', function(){
-//        auth()->user()->unreadNotifications->markAsRead();
-//    });
+    /*Route::get('markAsRead', function(){
+        auth()->user()->unreadNotifications->markAsRead();
+    });*/
 
 
 });
@@ -108,9 +108,17 @@ Route::post('professor/register', 'ProfessorController@store')->name('professor.
 Route::get('professor/login', 'Auth\ProfessorLoginController@login')->name('professor.auth.login');
 Route::post('professor/login', 'Auth\ProfessorLoginController@loginProfessor')->name('professor.auth.loginProfessor');
 
-Route::prefix('professor')->group(function () {
+Route::middleware(['auth:professor'])->prefix('professor')->group(function () {
     Route::get('/', 'ProfessorController@index')->name('professor.dashboard');
     Route::get('dashboard', 'ProfessorController@index')->name('professor.dashboard');
     Route::post('logout', 'Auth\ProfessorLoginController@logout')->name('professor.auth.logout');
+    Route::get('groups/{group}', 'ProfessorGroupController@show');
+    Route::post('{groups}/posts','PostController@storeProf');
+    Route::post('groups/{group}/posts/{post?}/comments','PostCommentsController@store');
+    Route::post('groups/{group}/posts/{post}/comments/{comment}','CommentRepliesController@store');
+    Route::get('events', 'EventController@eventProf')->name('professor.events');
+    Route::get('marks','ProfessorMarksController@index')->name('professor.marks');
+    Route::post('students-marks', 'ProfessorMarksController@viewStudents')->name('add.marks');
+    Route::post('save-marks', 'ProfessorMarksController@saveMarks');
 
 });

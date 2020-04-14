@@ -16,6 +16,10 @@ use App\Models\Source;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Table;
+use App\Notifications\CommentOnPost;
+use App\Notifications\MakePost;
+use Illuminate\Notifications\Console\NotificationTableCommand;
+use Illuminate\Support\Facades\Notification;
 use function foo\func;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -183,6 +187,15 @@ class ApiController extends Controller
             if(($request->has('department_id')) and ($request->has('grade_id'))){
                 $query->where('department_id', $request->department_id)->where('grade_id', $request->grade_id);
             }
+        })->get()->load('marks.subject');
+        return $this->apiResponse(1, '', $students);
+    }
+
+    public function studentsByGrade(Request $request){
+        $students = Student::where(function($query) use($request){
+            if(($request->has('department_id')) and ($request->has('grade_id'))){
+                $query->where('department_id', $request->department_id)->where('grade_id', $request->grade_id);
+            }
         })->get();
         return $this->apiResponse(1, '', $students);
     }
@@ -232,7 +245,7 @@ class ApiController extends Controller
 
     public function posts(){
         $posts = Post::all()->where('group_id', auth()->user()->group_id)->load('student','comments.replies');
-        return $this->apiResponse(1,'',$posts->last());
+        return $this->apiResponse(1,'',$posts->reverse());
     }
 
     public function makePost(Request $request){
@@ -245,11 +258,19 @@ class ApiController extends Controller
         }
         //$validator->group_id = auth()->user()->group_id;
         $post = new Post();
-        $newPost = $post->create($request->all());
-        $newPost->group_id = auth()->user()->group_id;
-        $newPost->student_id = auth()->user()->id;
-        $newPost->save();
-        return $this->apiResponse(1, 'Done', $newPost->load('student'));
+        $post = $post->create($request->all());
+        $post->group_id = auth()->user()->group_id;
+        $post->student_id = auth()->user()->id;
+        $post->save();
+//        $studentsIds = $newPost->group->students()->pluck('students.id')->toArray();
+//        dd($studentsIds);
+        //return $this->apiResponse(1, 'Done', $newPost->load('student'));
+        $students = Student::all()->where('group_id', $post->group_id);
+        Notification::send($students, new MakePost($post));
+        $notificationPost = auth()->user()->unreadNotifications;
+        return $this->apiResponse(1, 'Done', $notificationPost);
+
+//        dd(auth()->user()->unreadNotifications);
     }
 
     public function makeComment(Request $request){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use App\Models\Post;
 use App\Models\Student;
 use App\Notifications\MakePost;
@@ -46,6 +47,25 @@ class PostController extends Controller
         $post->body = request('post-content');
         $post->group_id = Auth::user()->group_id;
         $post->save();
+        /*$validator = request()->validate([
+            'post-content' => 'required',
+        ]);
+             Post::create($validator);*/
+
+        //$post->group->notify(new MakePost($post));
+        $students = Student::all()->where('group_id', $post->group_id);
+        Notification::send($students, new MakePost($post));
+        return 'Post created';
+    }
+
+    public function storeProf(Group $group)
+    {
+        $post = new Post();
+        $post->professor_id = Auth::user()->id;
+        $post->body = request('post-content');
+        $post->group_id = $group->id;
+        $post->save();
+        dd($post->professor->name);
         /*$validator = request()->validate([
             'post-content' => 'required',
         ]);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
 
-class Group extends Model 
+class Group extends Model
 {
     use Notifiable;
 
@@ -27,6 +27,11 @@ class Group extends Model
     public function grade()
     {
         return $this->belongsTo('App\Models\Grade');
+    }
+
+    public function department()
+    {
+        return $this->belongsTo('App\Models\Department');
     }
 
     public function professors()

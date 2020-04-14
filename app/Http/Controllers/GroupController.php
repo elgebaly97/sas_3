@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Grade;
+use App\Models\Group;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class GroupController extends Controller
     public function index()
     {
         //$group = Grade::where('grade_id', Auth::user()->grade_id);
-        $posts = Post::all()->where('group_id', Auth::user()->group_id);
+        $posts = Post::orderBy('created_at', 'desc')->get()->where('group_id', Auth::user()->group_id);
         $comments = Comment::all()->load('student');
         //dd($comments);
         return view('./student/group', compact('posts', 'comments'));

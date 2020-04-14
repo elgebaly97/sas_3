@@ -114,7 +114,7 @@
 
                 <!-- identity selection -->
                 <div class="form-group text-center col-sm-push-3 col-sm-6 col-xs-push-2 col-xs-8 input-group input-group-lg">
-                    <a class="btn btn-default btn-lg text-center" href="student-profile.html" role="button">Student</a>
+                    <a style="border-radius: 0px;color: #ffffff;background-color: #00243a;min-width: 32%;" class="btn btn-lg" href="#" role="button">Student</a>
                 </div>
                 <!-- input part -->
                 <!--username field-->
@@ -145,7 +145,7 @@
                 </div>
                 <!--login button-->
                 <div class="form-group col-sm-push-3 col-sm-6 col-xs-push-2 col-xs-8 input-group input-group-lg">
-                    <button class="btn btn-default btn-lg btn-block" type="submit">LOGIN</button>
+                    <button style="border-radius: 0px;color: #ffffff;background-color: #00243a;min-width: 32%;" class="btn btn-lg btn-block" type="submit">LOGIN</button>
                 </div>
                 <!--checkbox + forget password-->
                 <div

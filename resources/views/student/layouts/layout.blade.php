@@ -34,8 +34,28 @@
                 @if(Auth::guest())
                     <span></span>
                 @else
+                    <div class="col-md-3 col-sm-4 col-xs-10" style="margin:10px;">
+                        <form style="display:flex; align-items: center;" action="search" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <input type="text" class="form-control" name="q" placeholder="Search students">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search" style="margin:0%;"></span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-10" style="margin:10px;">
+                        <form style="display:flex; align-items: center;" action="searchprof" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <input type="text" class="form-control" name="q" placeholder="Search professors">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search" style="margin:0%;"></span>
+                            </button>
+                        </form>
+                    </div>
+
                     {{--Search--}}
-                    <form class="" action="search" method="POST" role="search">
+                    {{--<form class="" action="search" method="POST" role="search">
                         {{ csrf_field() }}
                         <div class="input-group">
                             <input type="text" class="form-control" name="q"
@@ -54,9 +74,21 @@
                                 <span class="glyphicon glyphicon-search"></span>
                             </button></span>
                         </div>
-                    </form>
+                    </form>--}}
                     {{--notification--}}
-                    <div class="dropdown">
+                    <div class="dropdown col-sm-1 col-xs-2" style="margin:10px;">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')"><span class="glyphicon glyphicon-globe" style="margin:0%;"></span>
+                            <span class="badge"></span>{{count(auth()->user()->unreadNotifications)}}</button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @foreach(auth()->user()->unreadNotifications as $notification)
+                                    @include('notification.'.snake_case(class_basename($notification->type)))
+                                @endforeach
+                            </li>
+                        </ul>
+                    </div>
+
+                    {{--<div class="dropdown">
                         <button class="dropdown-toggle" type="button" data-toggle="dropdown" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')"><span class="glyphicon glyphicon-globe"></span>
                             <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span></button>
                         <ul class="dropdown-menu">
@@ -66,7 +98,7 @@
                                 @endforeach
                             </li>
                         </ul>
-                    </div>
+                    </div>--}}
                 @endif
             </div>
         </div>

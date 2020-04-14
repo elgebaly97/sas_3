@@ -89,18 +89,7 @@
 @section('content')
 
 
-    <!-- start navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xs-9 navbar-left">
-                    <img src="{{asset('asset/images/badge.png')}}" class="img img-responsive navbar-brand"
-                         alt="Mansoura university badge" />
-                    <span><a href="{{route('whome')}}" style="color: white;text-decoration: none">Student administration system</a></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+
 
 
 
@@ -130,7 +119,7 @@
 
             <!-- identity selection -->
                 <div class="form-group text-center col-sm-push-3 col-sm-6 col-xs-push-2 col-xs-8 input-group input-group-lg">
-                    <a class="btn btn-default btn-lg text-center" href="#" role="button">Admin</a>
+                    <a style="border-radius: 0px;color: #ffffff;background-color: #00243a;min-width: 32%;" class="btn btn-lg" href="#" role="button">Admin</a>
                 </div>
                 <!-- input part -->
                 <!--username field-->
@@ -161,7 +150,7 @@
                 </div>
                 <!--login button-->
                 <div class="form-group col-sm-push-3 col-sm-6 col-xs-push-2 col-xs-8 input-group input-group-lg">
-                    <button class="btn btn-default btn-lg btn-block" type="submit">LOGIN</button>
+                    <button style="border-radius: 0px;color: #ffffff;background-color: #00243a;min-width: 32%;" class="btn btn-lg btn-block" type="submit">LOGIN</button>
                 </div>
                 <!--checkbox + forget password-->
                 <div
@@ -178,31 +167,7 @@
 
     <!-- FOOTER section -->
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <ul class="list-unstyled">
-                        <li><a href="#"><img src="{{asset('asset/images/web-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/face-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/insta-icon.svg')}}" /></a></li>
-                        <li><a href="#"><img src="{{asset('asset/images/twitter-icon.svg')}}" /></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <p><bdi>جميع الحقوق محفوظة &copy; مركز تقنية المعلومات - جامعة المنصورة</bdi>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 
 
 

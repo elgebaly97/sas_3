@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Department extends Model 
+class Department extends Model
 {
 
     protected $table = 'departments';
@@ -34,6 +34,11 @@ class Department extends Model
     public function subjects()
     {
         return $this->hasMany('App\Models\Subject');
+    }
+
+    public function groups()
+    {
+        return $this->hasMany('App\Models\Group');
     }
 
 }

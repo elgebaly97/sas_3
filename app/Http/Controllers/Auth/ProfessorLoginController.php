@@ -67,6 +67,6 @@ class ProfessorLoginController extends Controller
     public function logout()
     {
         Auth::guard('professor')->logout();
-        return redirect()->route('admin.auth.login');
+        return redirect()->route('professor.auth.login');
     }
 }

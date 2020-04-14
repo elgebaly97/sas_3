@@ -8,7 +8,7 @@ class Event extends Model
 {
     protected $table = 'events';
     public $timestamps = true;
-    protected $fillable = array('title', 'department_id', 'day', 'image');
+    protected $fillable = array('title', 'department_id', 'day', 'image','owner');
 
     public function department()
     {

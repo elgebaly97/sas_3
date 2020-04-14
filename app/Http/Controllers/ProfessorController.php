@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Models\Professor;
 
@@ -20,7 +22,9 @@ class ProfessorController extends Controller
 
     public function index()
     {
-        return view('professor.dashboard');
+        $groups = Group::all()->where('department_id', auth()->user()->department_id);
+        $subjects = Subject::all()->where('professor_id', auth()->user()->id);
+        return view('professor.dashboard', compact('groups','subjects'));
     }
 
     /**
