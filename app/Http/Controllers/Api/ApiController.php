@@ -244,7 +244,7 @@ class ApiController extends Controller
     // ********************* API For Groups *********************
 
     public function posts(){
-        $posts = Post::where('group_id', auth()->user()->group_id)->orderBy('updated_at','desc')->get()->load('student','comments.replies');
+        $posts = Post::where('group_id', auth()->user()->group_id)->orderBy('updated_at','desc')->get()->load('student', 'comments.student','comments.replies.student');
         return $this->apiResponse(1,'',$posts);
         //return response()->json($object);
     }

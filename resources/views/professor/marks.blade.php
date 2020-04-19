@@ -56,15 +56,15 @@
                 @foreach($students as $student)
                     {{--{{dd($student->marks()->where('subject_id',request('subject_id'))->first()->work)}}--}}
                     <tr>
-                        <form method="post" action="save-marks">
+                        <form method="post" action="mark">
                             @csrf
                         <input type="hidden" name="student_id" value="{{$student->id}}" />
                         <input type="hidden" name="subject_id" value="{{request('subject_id')}}" />
                         <td>{{$student->name}}</td>
-                        <td><input class="form-control" type="number" name="attendance" value="{{old('attendance')}}"></td>
-                        <td><input class="form-control" type="number" name="work" value="{{old('work')}}"></td>
-                        <td><input class="form-control" type="number" name="midterm" value="{{old('midterm')}}"></td>
-                        <td><input class="form-control" type="number" name="semester" value="{{old('semester')}}"></td>
+                        <td><input class="form-control" type="text" name="attendance" value="{{old('attendance')}}" style="background: none; width: 50px; height: 30px;"></td>
+                        <td><input class="form-control" type="text" name="work" value="{{old('work')}}" style="background: none; width: 50px; height: 30px;"></td>
+                        <td><input class="form-control" type="text" name="midterm" value="{{old('midterm')}}" style="background: none; width: 50px; height: 30px;"></td>
+                        <td><input class="form-control" type="text" name="semester" value="{{old('semester')}}" style="background: none; width: 50px; height: 30px;"></td>
                         {{--<td><input class="form-control" type="number" name="attendance" value="{{old('attendance')}}"></td>--}}
                         <td><input type="submit" class="btn btn-primary" value="Save"></td>
                         <td><a class="btn btn-info">Edit</a></td>

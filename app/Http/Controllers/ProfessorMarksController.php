@@ -49,6 +49,7 @@ class ProfessorMarksController extends Controller
         $validator['subject_id'] = request('subject_id');
         Mark::create($validator);
 
-        return view('professor.marks', compact('groups','subjects','students'));
+        //return view('professor.marks', compact('groups','subjects','students'));
+        return redirect()->route('add.marks');
     }
 }

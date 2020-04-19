@@ -119,6 +119,15 @@ Route::middleware(['auth:professor'])->prefix('professor')->group(function () {
     Route::get('events', 'EventController@eventProf')->name('professor.events');
     Route::get('marks','ProfessorMarksController@index')->name('professor.marks');
     Route::post('students-marks', 'ProfessorMarksController@viewStudents')->name('add.marks');
-    Route::post('save-marks', 'ProfessorMarksController@saveMarks');
+    //Route::post('mark', 'ProfessorMarksController@saveMarks');
+    Route::get('subject','SubjectController@index')->name('subject');
+    Route::get('subject/{subject}','SubjectController@subjectProf')->name('professor.subject');
+    Route::get('subject/{subject}/add-assignment','SubjectController@addAssignment')->name('add.assignments');
+    Route::post('subject/{subject}/assignment', 'SubjectController@storeAssignment');
+    Route::get('subject/{subject}/add-source','SubjectController@addSource')->name('add.sources');
+    Route::post('subject/{subject}/source', 'SubjectController@storeSource');
+    Route::get('subject/{subject}/add-mark','SubjectController@addMark')->name('add.marks');
+    Route::post('subject/{subject}/mark', 'SubjectController@storeMark');
+    /*Route::get('subject/{subject}/marks/{mark}/edit', 'SubjectController@editMark')->name('edit.marks');*/
 
 });

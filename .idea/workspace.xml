@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ec7c2e6-bba4-4d18-8196-8e95331e1270" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfessorMarksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfessorMarksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/professor/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/professor/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/professor/marks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/professor/marks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +231,8 @@
       <workItem from="1586596865686" duration="13023000" />
       <workItem from="1586768232733" duration="10093000" />
       <workItem from="1586856105051" duration="10792000" />
-      <workItem from="1587031501753" duration="3723000" />
+      <workItem from="1587031501753" duration="18362000" />
+      <workItem from="1587289439793" duration="670000" />
     </task>
     <servers />
   </component>
@@ -232,35 +240,35 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="464" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586859931464">
+    <state x="464" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587049978675">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="464" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1586859931464" />
+    <state x="464" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587049978675" />
     <state x="2333" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834/1920.0.1366.738@1920.0.1366.738" timestamp="1585216961125" />
     <state x="464" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1586771953733" />
-    <state x="604" y="340" key="NewPhpFileDialog" timestamp="1586771444293">
+    <state x="604" y="340" key="NewPhpFileDialog" timestamp="1587056510443">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="604" y="340" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1586607192935" />
+    <state x="604" y="340" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587056510443" />
     <state x="604" y="340" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1586771444293" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1586886722720">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1586886722720" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1587031626428">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1587289871806">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587031626428" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1586768236751" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1587289871806" />
     <state x="567" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585130507910">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="567" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1585130507910" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1586888102886">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1587290084360">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1586859884566" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587052090280" />
     <state x="2303" y="137" width="672" height="600" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@1920.0.1366.738" timestamp="1585217700287" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1586888102886" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1587290084360" />
   </component>
 </project>

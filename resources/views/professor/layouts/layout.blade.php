@@ -72,7 +72,7 @@
                     <ul class="list-unstyled">
                         @foreach($subjects as $subject)
                             <li>
-                                <a href="add-source.html">{{$subject->name}}</a>
+                                <a href="{{route('professor.subject', $subject)}}">{{$subject->name}}</a>
                             </li>
                         @endforeach
                     </ul>
