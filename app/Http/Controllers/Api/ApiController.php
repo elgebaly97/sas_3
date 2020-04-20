@@ -79,11 +79,13 @@ class ApiController extends Controller
     }
 
     public function marks(Request $request){
-        $mark = Mark::where(function($query) use($request){
+        /*$mark = Mark::where(function($query) use($request){
             if(($request->has('subject_id')) and ($request->has('student_id'))){
                 $query->where('subject_id', $request->subject_id)->where('student_id', $request->student_id);
             }
-        })->get()->load('subject');
+        })->get()->load('subject');*/
+        //dd(gettype($mark));
+        $mark = Mark::where('subject_id', request('subject_id'))->where('student_id', request('student_id'))->first()->load('student');
 
         return $this->apiResponse(1, '', $mark);
     }
@@ -263,13 +265,13 @@ class ApiController extends Controller
         $post->group_id = auth()->user()->group_id;
         $post->student_id = auth()->user()->id;
         $post->save();
-//        $studentsIds = $newPost->group->students()->pluck('students.id')->toArray();
-//        dd($studentsIds);
-        //return $this->apiResponse(1, 'Done', $newPost->load('student'));
-        $students = Student::all()->where('group_id', $post->group_id);
+        //$studentsIds = $newPost->group->students()->pluck('students.id')->toArray();
+        //dd($studentsIds);
+        return $this->apiResponse(1, 'Done', $post->load('student'));
+        /*$students = Student::all()->where('group_id', $post->group_id);
         Notification::send($students, new MakePost($post));
         $notificationPost = auth()->user()->unreadNotifications;
-        return $this->apiResponse(1, 'Done', $notificationPost);
+        return $this->apiResponse(1, 'Done', $notificationPost);*/
 
 //        dd(auth()->user()->unreadNotifications);
     }
@@ -291,6 +293,19 @@ class ApiController extends Controller
         return $this->apiResponse(1, 'Done', $newComment->load('student'));
     }
 
+    public function post($id){
+        $post = Post::find($id);
+        return $this->apiResponse(1, 'Done', $post);
+
+    }
+
+    public function comments(){
+        //$post = Post::find($id);
+        $comments = Comment::where('post_id', request('post_id'))->get()->load('student');
+        return $this->apiResponse(1, 'Done', $comments);
+
+    }
+
     public function makeReply(Request $request){
         $validator = validator()->make($request->all(), [
             'body' => 'required',
@@ -306,6 +321,12 @@ class ApiController extends Controller
         $newReply->student_id = auth()->user()->id;
         $newReply->save();
         return $this->apiResponse(1, 'Done', $newReply->load('student'));
+    }
+
+    public function replies(){
+        $replies = CommentReply::where('comment_id', request('comment_id'))->get()->load('student');
+        //dd(gettype($replies));
+        return $this->apiResponse(1, 'Done', $replies);
     }
 
 

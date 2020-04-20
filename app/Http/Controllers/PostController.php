@@ -55,7 +55,7 @@ class PostController extends Controller
         //$post->group->notify(new MakePost($post));
         $students = Student::all()->where('group_id', $post->group_id);
         Notification::send($students, new MakePost($post));
-        return 'Post created';
+        return back();
     }
 
     public function storeProf(Group $group)
@@ -74,7 +74,7 @@ class PostController extends Controller
         //$post->group->notify(new MakePost($post));
         $students = Student::all()->where('group_id', $post->group_id);
         Notification::send($students, new MakePost($post));
-        return 'Post created';
+        return back();
     }
 
     /**

@@ -67,7 +67,7 @@
             <nav class="sidenav col-xs-2">
                 <ul class="mcd-menu">
                     <li>
-                        <a href="{{route('student.dashboard')}}" class="active">
+                        <a href="{{route('student.dashboard')}}" class="">
                             <img src="{{asset('asset/images/photo icon.svg')}}" class="profile">
                             <strong>Profile</strong>
                         </a>
@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('student.subjects')}}">
+                        <a href="{{route('student.subjects')}}" class="active">
                             <img src="{{asset('asset/images/subj icon.svg')}}">
                             <strong>Subjects</strong>
                         </a>

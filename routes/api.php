@@ -63,6 +63,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
         Route::post('make-post', 'ApiController@makePost');
         Route::post('make-comment', 'ApiController@makeComment');
         Route::post('make-reply', 'ApiController@makeReply');
+        Route::post('posts/{post}', 'ApiController@post');
+        //Route::post('posts/{post}/comments', 'ApiController@comments');
+        Route::post('comments', 'ApiController@comments');
+        Route::post('replies', 'ApiController@replies');
 
 
 

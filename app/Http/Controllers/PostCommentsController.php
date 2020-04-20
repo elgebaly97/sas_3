@@ -48,7 +48,7 @@ class PostCommentsController extends Controller
 
         $post->student->notify(new CommentOnPost($post));
 
-        return 'Comment Created';
+        return back();
         //dd($comment);
     }
 

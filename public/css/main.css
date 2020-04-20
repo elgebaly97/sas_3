@@ -635,7 +635,7 @@ table > tr{
 
 /************* GROUPS ***************/
 
-.post
+/*.post
 {
     background-color: #FFF !important;
     color: #002b5f;
@@ -706,11 +706,11 @@ table > tr{
 {
     display: none;
 }
-/*.post:nth-of-type(2), .post:nth-of-type(3)
+!*.post:nth-of-type(2), .post:nth-of-type(3)
 {
     display: none;
-}*/
-/************* COMMENT ************/
+}*!
+!************* COMMENT ************!
 
 .wrt-cmt{
     display: flex;
@@ -722,7 +722,7 @@ table > tr{
 }
 #posts-box section:nth-last-of-type(1)
 {
-    /*display: none;*/
+    !*display: none;*!
 }
 
 #bodyText
@@ -732,7 +732,125 @@ table > tr{
 #addComment
 {
     border: none; margin-left: 5px; border-radius:0px; background-color: #003b5f; color: #FFF;
+}*/
+
+/************* GROUPS ***************/
+
+.post
+{
+    background-color: #FFF;
+    color: #002b5f;
+    border-radius: 1%;
+    border: #00243a 1px solid;
+    margin: 20px;
 }
+.post-divs{
+    display: flex !important;
+    margin: 5px;
+    padding: 5px;
+    border-bottom: #FB9854 1px solid;
+}
+.post-divs:nth-of-type(2){
+    display: block;
+}
+.post div:last-of-type, .post div:nth-of-type(4)
+{
+    border-bottom: none;
+}
+.post-divs input:first-of-type
+{
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+}
+.post-btns
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.post-btns button
+{
+    border-radius: 0%;
+    background: none;
+    font-weight: 700;
+    font-size: 17px;
+    color: #003b5f;
+    letter-spacing: 2px;
+    flex: 1;
+}
+.post-btns button:hover
+{
+    color: #FB9854;
+}
+.post-btns button:nth-of-type(1), .post-btns button:nth-of-type(2)
+{
+    border-right: #FB9854 1px solid;
+}
+#cmt-btn
+{
+    border-right: none;
+}
+
+.post-btns button:nth-of-type(4){
+    border-radius: 0%;
+    background-color: #003b5f;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+#cmts
+{
+    border-top: #003b5f 1px solid;
+    font-style: italic;
+    font-size: 17px;
+    background-color: rgba(232,196,172,0.5);
+    margin-bottom:-5px;
+}
+.reply
+{
+    border-top: #003b5f 1px solid;
+    font-style: italic;
+    font-size: 17px;
+    background-color: rgba(199,213,232,0.3);
+    margin-bottom:-5px;
+}
+#post-sec div:nth-of-type(5)
+{
+    display: none;
+}
+/*.post:nth-of-type(2), .post:nth-of-type(3)
+{
+    display: none;
+}*/
+/************* COMMENT ************/
+.cmt-field
+{
+    border-top: #FB9854 1px solid;
+}
+.cmt-field form
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#posts-box section:nth-last-of-type(1)
+{
+    /*display: none;*/
+}
+
+#bodyText
+{
+    border: none; padding: 10px 0;
+}
+#addComment
+{
+    border: none; margin-left: 5px; border-radius:0px; background-color: #003b5f; color: #FFF;
+}
+
+
+
 /************cards*************/
 .card {
     /* Add shadows to create the "card" effect */

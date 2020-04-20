@@ -47,7 +47,7 @@ class CommentRepliesController extends Controller
         $comment->replies()->save($reply);
 
         $comment->student->notify(new ReplyOnComment($comment));
-        return 'Reply Created';
+        return back();
 
     }
 
