@@ -85,6 +85,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
         Route::post('profile-professor', 'AuthController@profileProfessor');
         Route::get('assigns', 'ApiController@assignProf');
         Route::get('source-prof', 'ApiController@sourceProf');
+        Route::get('groups', 'ApiController@groupsProf');
+        Route::get('group', 'ApiController@groupForProf');
+        Route::post('group/post', 'ApiController@makePostForProf');
 
 
 

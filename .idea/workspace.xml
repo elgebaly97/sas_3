@@ -4,15 +4,7 @@
     <list default="true" id="3ec7c2e6-bba4-4d18-8196-8e95331e1270" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentRepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentRepliesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostCommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostCommentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/assignments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/assignments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/events.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/group.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/subject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/subject.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -238,7 +230,8 @@
       <workItem from="1586856105051" duration="10792000" />
       <workItem from="1587031501753" duration="18362000" />
       <workItem from="1587289439793" duration="5606000" />
-      <workItem from="1587374954409" duration="10817000" />
+      <workItem from="1587374954409" duration="11585000" />
+      <workItem from="1587472568850" duration="1101000" />
     </task>
     <servers />
   </component>
@@ -261,10 +254,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1586886722720" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1587375397540">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1587472582907">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587031626428" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587472582907" />
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1587375397540" />
     <state x="567" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585130507910">
       <screen x="0" y="0" width="1536" height="834" />

@@ -241,12 +241,40 @@ class ApiController extends Controller
         return $this->apiResponse(1,'',$grades);
     }
 
+    public function groupsProf(){
+        $groups = Group::where('department_id', auth()->user()->department_id)->get();
+        return $this->apiResponse(1,'',$groups);
+    }
+
+    public function groupForProf(){
+        $posts = Post::where('group_id', request('group_id'))->orderBy('updated_at','desc')->get()->load('professor', 'student', 'comments.student','comments.replies.student');
+        return $this->apiResponse(1,'',$posts);
+        //return response()->json($object);
+    }
+
+    public function makePostForProf(Request $request){
+        $validator = validator()->make($request->all(), [
+            'body' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->apiResponse(0, $validator->errors()->first(), $validator->errors());
+        }
+        //$validator->group_id = auth()->user()->group_id;
+        $post = new Post();
+        $post = $post->create($request->all());
+        $post->group_id = request('group_id');
+        $post->professor_id = auth()->user()->id;
+        $post->save();
+        return $this->apiResponse(1, 'Done', $post->load('professor'));
+    }
+
 
 
     // ********************* API For Groups *********************
 
     public function posts(){
-        $posts = Post::where('group_id', auth()->user()->group_id)->orderBy('updated_at','desc')->get()->load('student', 'comments.student','comments.replies.student');
+        $posts = Post::where('group_id', auth()->user()->group_id)->orderBy('updated_at','desc')->get()->load('professor', 'student', 'comments.student','comments.replies.student');
         return $this->apiResponse(1,'',$posts);
         //return response()->json($object);
     }
