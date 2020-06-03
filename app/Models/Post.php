@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model 
+class Post extends Model
 {
 
     protected $table = 'posts';
@@ -34,6 +34,11 @@ class Post extends Model
     public function group()
     {
         return $this->belongsTo('App\Models\Group');
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany('App\Favorite');
     }
 
 }

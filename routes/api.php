@@ -15,8 +15,8 @@ use Illuminate\Http\Request;
 
 
 // make it comment for heroku
-
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });*/
 
@@ -49,6 +49,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
     Route::get('all-departments', 'ApiController@allDepartments');
     Route::get('all-grades', 'ApiController@allGrades');
     Route::get('students-by-grade', 'ApiController@studentsByGrade');
+    Route::post('comments', 'ApiController@comments');
+    Route::post('replies', 'ApiController@replies');
 
 
 
@@ -65,8 +67,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function() {
         Route::post('make-reply', 'ApiController@makeReply');
         Route::post('posts/{post}', 'ApiController@post');
         //Route::post('posts/{post}/comments', 'ApiController@comments');
-        Route::post('comments', 'ApiController@comments');
-        Route::post('replies', 'ApiController@replies');
+
+        Route::post('favorite', 'ApiController@favorite');
 
 
 

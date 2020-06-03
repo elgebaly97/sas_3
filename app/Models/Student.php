@@ -80,4 +80,9 @@ class Student extends Authenticatable
         return 'App.Models.Student.'.$this->id;
     }
 
+    public function favorites()
+    {
+        return $this->hasMany('App\Favorite');
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Favorite;
 use App\Models\Assignment;
 use App\Models\Comment;
 use App\Models\CommentReply;
@@ -275,6 +276,9 @@ class ApiController extends Controller
 
     public function posts(){
         $posts = Post::where('group_id', auth()->user()->group_id)->orderBy('updated_at','desc')->get()->load('professor', 'student', 'comments.student','comments.replies.student');
+        //dd($posts->first()->comments()->count());
+        //$comments = Comment::all();
+
         return $this->apiResponse(1,'',$posts);
         //return response()->json($object);
     }
@@ -329,7 +333,7 @@ class ApiController extends Controller
 
     public function comments(){
         //$post = Post::find($id);
-        $comments = Comment::where('post_id', request('post_id'))->get()->load('student');
+        $comments = Comment::where('post_id', request('post_id'))->get()->load('student', 'replies');
         return $this->apiResponse(1, 'Done', $comments);
 
     }
@@ -355,6 +359,15 @@ class ApiController extends Controller
         $replies = CommentReply::where('comment_id', request('comment_id'))->get()->load('student');
         //dd(gettype($replies));
         return $this->apiResponse(1, 'Done', $replies);
+    }
+
+    public function favorite(Request $request){
+        $favorite = new Favorite();
+        $favorite->student_id = auth()->user()->id;
+        $favorite->post_id = $request->post_id;
+        $favorite->favorite = !($favorite->favorite);
+        $favorite->save();
+        return $this->apiResponse(1, 'Done', $favorite);
     }
 
 

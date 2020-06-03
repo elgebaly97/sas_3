@@ -203,14 +203,14 @@
 
         <!-- Group Section -->
             <main class="col-sm-push-2 col-sm-8 col-xs-9" id="posts-box">
-                <div class="create-post">
+                {{--<div class="create-post">
                         <form action="group/posts" method="post">
                             @csrf
                             <input type="text" name="post-content">
                             <input type="hidden" name="group_id" />
                             <input type="submit" class="" value="Post">
                         </form>
-                    </div>
+                    </div>--}}
 
                 <section class="post">
                     <div class="post-divs">
@@ -245,7 +245,10 @@
                                 <img class='media-object' src="{{asset('asset/images/user-pic.svg')}}" alt='...'style='width: 55px; height: 55px;'>
                             </div>
                             <div class='media-body'>
-                                <h3 class='media-heading'>{{$post->student->name}}</h3>
+                                {{--<h3 class='media-heading'>{{$post->student->name}}</h3>--}}
+                                {{--<h6></h6>--}}
+                                <h3 class='media-heading'>{{$post->student['name']}}</h3>
+                                <h3 class='media-heading'>{{$post->professor['name']}}</h3>
                             </div>
                             <div class='post-divs'>
                                 <p>{{$post->body}}</p>

@@ -4,7 +4,11 @@
     <list default="true" id="3ec7c2e6-bba4-4d18-8196-8e95331e1270" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/professor/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/professor/group.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/group.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -231,7 +235,9 @@
       <workItem from="1587031501753" duration="18362000" />
       <workItem from="1587289439793" duration="5606000" />
       <workItem from="1587374954409" duration="11585000" />
-      <workItem from="1587472568850" duration="1101000" />
+      <workItem from="1587472568850" duration="3493000" />
+      <workItem from="1590896626563" duration="5522000" />
+      <workItem from="1591022048972" duration="2663000" />
     </task>
     <servers />
   </component>
@@ -254,20 +260,20 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1586886722720" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1587472582907">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1591156111227">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587472582907" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1587375397540" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1591156111227" />
     <state x="567" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585130507910">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="567" y="105" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1585130507910" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1587394496679">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1591156140362">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587052090280" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1587480403430" />
     <state x="2303" y="137" width="672" height="600" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@1920.0.1366.738" timestamp="1585217700287" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1587394496679" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1591156140362" />
   </component>
 </project>
