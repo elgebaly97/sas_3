@@ -333,7 +333,7 @@ class ApiController extends Controller
 
     public function comments(){
         //$post = Post::find($id);
-        $comments = Comment::where('post_id', request('post_id'))->get()->load('student', 'replies');
+        $comments = Comment::where('post_id', request('post_id'))->get()->load('student', 'replies.student');
         return $this->apiResponse(1, 'Done', $comments);
 
     }
